@@ -29,7 +29,7 @@
   "packageManager": "pnpm@9.15.1",
   "devDependencies": {
     "@actunime/eslint-config": "^1.0.5",
-    "@actunime/typescript-config": "^1.0.19",
+    "@actunime/typescript-config": "^1.0.20",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.5.0",
     "@semantic-release/changelog": "^6.0.3",
@@ -47,7 +47,7 @@
     "typescript-eslint": "^8.24.1"
   },
   "dependencies": {
-    "@actunime/types": "^1.0.4",
+    "@actunime/types": "^1.0.5",
     "@actunime/utils": "^1.0.4",
     "dotenv": "^16.4.7",
     "mongoose": "^8.10.1"

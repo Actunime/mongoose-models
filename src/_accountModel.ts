@@ -7,6 +7,7 @@ const AccountSchema = new Schema<IAccount>({
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
     userId: { type: String, required: true },
     email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
     verified: { type: Date, default: undefined },
     deletedAt: { type: Date, default: undefined, index: { expires: '1d' } },
 }, { timestamps: true, id: false, toJSON: { virtuals: true } });
