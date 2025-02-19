@@ -13,6 +13,7 @@ const ImageSchema = new Schema<IImage>(
   {
     id: { type: String, default: () => genPublicID(5) },
     label: { type: String, enum: ImageLabelArray },
+    target: { type: withImage, required: true },
     targetPath: { type: String, enum: TargetPathArray, required: true },
     isVerified: { type: Boolean, default: false },
   },

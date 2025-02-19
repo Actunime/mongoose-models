@@ -10,6 +10,7 @@ exports.withImage = new mongoose_1.Schema({
 const ImageSchema = new mongoose_1.Schema({
     id: { type: String, default: () => (0, utils_1.genPublicID)(5) },
     label: { type: String, enum: types_1.ImageLabelArray },
+    target: { type: exports.withImage, required: true },
     targetPath: { type: String, enum: types_1.TargetPathArray, required: true },
     isVerified: { type: Boolean, default: false },
 }, { timestamps: true, id: false, toJSON: { virtuals: true } });
