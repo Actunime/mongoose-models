@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Actunime/mongoose-models/compare/v1.0.1...v1.0.2) (2025-02-19)
+
+
+### Bug Fixes
+
+* husky use pnpm ([b177567](https://github.com/Actunime/mongoose-models/commit/b1775677fd5a2d2098decd1bc64102eab89a66f8))
+
 ## [1.0.1](https://github.com/Actunime/mongoose-models/compare/v1.0.0...v1.0.1) (2025-02-19)
 
 
