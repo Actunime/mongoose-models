@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/Actunime/mongoose-models/compare/v1.0.3...v1.0.4) (2025-02-19)
+
+
+### Bug Fixes
+
+* adding "password" ([955c2eb](https://github.com/Actunime/mongoose-models/commit/955c2ebe2c2dee73722dab830f94917a221a8397))
+
 ## [1.0.3](https://github.com/Actunime/mongoose-models/compare/v1.0.2...v1.0.3) (2025-02-19)
 
 
