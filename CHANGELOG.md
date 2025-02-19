@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Actunime/mongoose-models/compare/v1.0.0...v1.0.1) (2025-02-19)
+
+
+### Bug Fixes
+
+* utilisation de pnpm ([e620f03](https://github.com/Actunime/mongoose-models/commit/e620f0393d6817dcb5b2a5ba43301e2fba6176fa))
+
 # 1.0.0 (2025-02-18)
 
 
