@@ -1,4 +1,3 @@
-import { IEmailCode } from "@actunime/types";
 import { Model, Schema } from "mongoose";
 export declare const withEmailCodeSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
@@ -16,9 +15,5 @@ export declare const withEmailCodeSchema: Schema<any, Model<any, any, any, any, 
 } & {
     __v: number;
 }>;
-export declare const EmailCodeModel: Model<IEmailCode, {}, {}, {}, import("mongoose").Document<unknown, {}, IEmailCode> & IEmailCode & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
-    __v: number;
-}, any>;
+export declare const EmailCodeModel: Model<IEmailCode, {}, {}, {}, any, any>;
 //# sourceMappingURL=_emailCodeModel.d.ts.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"_patchModel.d.ts","sourceRoot":"","sources":["../src/_patchModel.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,MAAM,EAIP,MAAM,iBAAiB,CAAC;AAEzB,OAAO,EAAE,KAAK,EAAE,MAAM,EAAiB,MAAM,UAAU,CAAC;AAiDxD,eAAO,MAAM,UAAU;;;;OACiD,CAAC"}
+{"version":3,"file":"_patchModel.d.ts","sourceRoot":"","sources":["../src/_patchModel.ts"],"names":[],"mappings":"AAOA,OAAO,EAAE,KAAK,EAAyB,MAAM,UAAU,CAAC;AAiDxD,eAAO,MAAM,UAAU,qCACiD,CAAC"}

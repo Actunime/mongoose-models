@@ -1,4 +1,3 @@
-import { IGroupe } from "@actunime/types";
 import { Model, Schema } from "mongoose";
 export declare const withGroupeSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
@@ -16,9 +15,5 @@ export declare const withGroupeSchema: Schema<any, Model<any, any, any, any, any
 } & {
     __v: number;
 }>;
-export declare const GroupeModel: Model<IGroupe, {}, {}, {}, import("mongoose").Document<unknown, {}, IGroupe> & IGroupe & Required<{
-    _id: Schema.Types.ObjectId;
-}> & {
-    __v: number;
-}, any>;
+export declare const GroupeModel: Model<IGroupe, {}, {}, {}, any, any>;
 //# sourceMappingURL=_groupeModel.d.ts.map

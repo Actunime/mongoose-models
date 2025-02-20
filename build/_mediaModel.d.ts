@@ -1,21 +1,24 @@
-import { IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
-    __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IMediaTitle, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IMediaTitle>> & import("mongoose").FlatRecord<IMediaTitle> & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
+export declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
+    [x: string]: unknown;
+}, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
+    [x: string]: unknown;
+}>> & import("mongoose").FlatRecord<{
+    [x: string]: unknown;
+}> & Required<{
+    _id: unknown;
+}> & {
     __v: number;
 }>;
-export declare const MediaDateSchema: Schema<IMediaDate, import("mongoose").Model<IMediaDate, any, any, any, import("mongoose").Document<unknown, any, IMediaDate> & IMediaDate & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
-    __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IMediaDate, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IMediaDate>> & import("mongoose").FlatRecord<IMediaDate> & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
+export declare const MediaDateSchema: Schema<IMediaDate, import("mongoose").Model<IMediaDate, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
+    [x: string]: unknown;
+}, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
+    [x: string]: unknown;
+}>> & import("mongoose").FlatRecord<{
+    [x: string]: unknown;
+}> & Required<{
+    _id: unknown;
+}> & {
     __v: number;
 }>;
 export declare const MediaImageSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
@@ -34,13 +37,15 @@ export declare const MediaImageSchema: Schema<any, import("mongoose").Model<any,
 } & {
     __v: number;
 }>;
-export declare const MediaLinkSchema: Schema<IMediaLink, import("mongoose").Model<IMediaLink, any, any, any, import("mongoose").Document<unknown, any, IMediaLink> & IMediaLink & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
-    __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IMediaLink, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IMediaLink>> & import("mongoose").FlatRecord<IMediaLink> & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
+export declare const MediaLinkSchema: Schema<IMediaLink, import("mongoose").Model<IMediaLink, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
+    [x: string]: unknown;
+}, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
+    [x: string]: unknown;
+}>> & import("mongoose").FlatRecord<{
+    [x: string]: unknown;
+}> & Required<{
+    _id: unknown;
+}> & {
     __v: number;
 }>;
 export declare const withSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {

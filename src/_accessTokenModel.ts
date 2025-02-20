@@ -4,6 +4,7 @@ import { Model, Schema, model, models } from "mongoose";
 const AccessTokenSchema = new Schema<IAccessToken>(
   {
     token: { type: String, required: true, unique: true, index: "text" },
+    refreshToken: { type: String, required: true, unique: true, index: "text" },
     clientId: { type: String, required: true, index: "text" },
     userId: { type: String, required: true, index: "text" },
     device: { type: String },

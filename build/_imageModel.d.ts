@@ -1,5 +1,4 @@
 import { Model, Schema } from "mongoose";
-import { IImage } from "@actunime/types";
 export declare const withImage: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
     toJSON: {
@@ -16,9 +15,5 @@ export declare const withImage: Schema<any, Model<any, any, any, any, any, any>,
 } & {
     __v: number;
 }>;
-export declare const ImageModel: Model<IImage, {}, {}, {}, import("mongoose").Document<unknown, {}, IImage> & IImage & Required<{
-    _id: Schema.Types.ObjectId;
-}> & {
-    __v: number;
-}, any>;
+export declare const ImageModel: Model<IImage, {}, {}, {}, any, any>;
 //# sourceMappingURL=_imageModel.d.ts.map

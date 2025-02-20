@@ -4,6 +4,7 @@ exports.AccessTokenModel = exports.withAccessTokenSchema = void 0;
 const mongoose_1 = require("mongoose");
 const AccessTokenSchema = new mongoose_1.Schema({
     token: { type: String, required: true, unique: true, index: "text" },
+    refreshToken: { type: String, required: true, unique: true, index: "text" },
     clientId: { type: String, required: true, index: "text" },
     userId: { type: String, required: true, index: "text" },
     device: { type: String },
