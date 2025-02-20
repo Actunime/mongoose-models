@@ -1,3 +1,11 @@
+## [1.0.9](https://github.com/Actunime/mongoose-models/compare/v1.0.8...v1.0.9) (2025-02-20)
+
+
+### Bug Fixes
+
+* date expiration doc ([182123c](https://github.com/Actunime/mongoose-models/commit/182123c269bbdffe3bf6b2fe80ccc7dacda3f4b6))
+* use accountId ([aa28e62](https://github.com/Actunime/mongoose-models/commit/aa28e6246593ee52d3b669670a86f15235e4e611))
+
 ## [1.0.8](https://github.com/Actunime/mongoose-models/compare/v1.0.7...v1.0.8) (2025-02-20)
 
 
