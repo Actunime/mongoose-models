@@ -1,3 +1,4 @@
+import { IPreRegister } from "@actunime/types";
 import { Model, Schema } from "mongoose";
 export declare const withPreRegisterSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
@@ -15,5 +16,9 @@ export declare const withPreRegisterSchema: Schema<any, Model<any, any, any, any
 } & {
     __v: number;
 }>;
-export declare const PreRegisterModel: Model<IPreRegister, {}, {}, {}, any, any>;
+export declare const PreRegisterModel: Model<IPreRegister, {}, {}, {}, import("mongoose").Document<unknown, {}, IPreRegister> & IPreRegister & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}, any>;
 //# sourceMappingURL=_preRegister.d.ts.map

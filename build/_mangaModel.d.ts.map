@@ -1,1 +1,1 @@
-{"version":3,"file":"_mangaModel.d.ts","sourceRoot":"","sources":["../src/_mangaModel.ts"],"names":[],"mappings":"AASA,OAAO,EAAE,KAAK,EAAE,MAAM,EAAiB,MAAM,UAAU,CAAC;AAkBxD,eAAO,MAAM,eAAe;;;;;;;;;;;;;;;;;;;;;EAe3B,CAAC;AAwFF,eAAO,MAAM,UAAU,qCACyC,CAAC"}
+{"version":3,"file":"_mangaModel.d.ts","sourceRoot":"","sources":["../src/_mangaModel.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,MAAM,EAMP,MAAM,iBAAiB,CAAC;AAEzB,OAAO,EAAE,KAAK,EAAE,MAAM,EAAiB,MAAM,UAAU,CAAC;AAkBxD,eAAO,MAAM,eAAe;;;;;;;;;;;;;;;;;;;;;EAe3B,CAAC;AAwFF,eAAO,MAAM,UAAU;;;;OACyC,CAAC"}

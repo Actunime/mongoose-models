@@ -1,1 +1,1 @@
-{"version":3,"file":"_accountModel.d.ts","sourceRoot":"","sources":["../src/_accountModel.ts"],"names":[],"mappings":"AAEA,OAAO,EAAS,KAAK,EAAkB,MAAM,UAAU,CAAC;AAgBxD,eAAO,MAAM,YAAY,uCAA6E,CAAC"}
+{"version":3,"file":"_accountModel.d.ts","sourceRoot":"","sources":["../src/_accountModel.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,iBAAiB,CAAC;AAE3C,OAAO,EAAS,KAAK,EAAU,MAAM,EAAE,MAAM,UAAU,CAAC;AAgBxD,eAAO,MAAM,YAAY;;;;OAA6E,CAAC"}

@@ -1,3 +1,4 @@
+import { ITrack } from "@actunime/types";
 import { Model, Schema } from "mongoose";
 export declare const withTrackSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
@@ -15,5 +16,9 @@ export declare const withTrackSchema: Schema<any, Model<any, any, any, any, any,
 } & {
     __v: number;
 }>;
-export declare const TrackModel: Model<ITrack, {}, {}, {}, any, any>;
+export declare const TrackModel: Model<ITrack, {}, {}, {}, import("mongoose").Document<unknown, {}, ITrack> & ITrack & Required<{
+    _id: Schema.Types.ObjectId;
+}> & {
+    __v: number;
+}, any>;
 //# sourceMappingURL=_trackModel.d.ts.map

@@ -1,3 +1,4 @@
+import { IAccessToken } from "@actunime/types";
 import { Model, Schema } from "mongoose";
 export declare const withAccessTokenSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
@@ -15,5 +16,9 @@ export declare const withAccessTokenSchema: Schema<any, Model<any, any, any, any
 } & {
     __v: number;
 }>;
-export declare const AccessTokenModel: Model<IAccessToken, {}, {}, {}, any, any>;
+export declare const AccessTokenModel: Model<IAccessToken, {}, {}, {}, import("mongoose").Document<unknown, {}, IAccessToken> & IAccessToken & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}, any>;
 //# sourceMappingURL=_accessTokenModel.d.ts.map
