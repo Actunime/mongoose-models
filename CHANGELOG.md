@@ -1,3 +1,13 @@
+## [1.0.7](https://github.com/Actunime/mongoose-models/compare/v1.0.6...v1.0.7) (2025-02-20)
+
+
+### Bug Fixes
+
+* add PreRegister types ([7234197](https://github.com/Actunime/mongoose-models/commit/72341971a67a63d16dfdd3cde2ad9ce93a549450))
+* self-packages update ([83cd181](https://github.com/Actunime/mongoose-models/commit/83cd1817d9b0a5bed3cf3cc3e1aa857b2abca0c7))
+* self-packages update ([b637993](https://github.com/Actunime/mongoose-models/commit/b6379937c713cb05b202d8fda9afd676ab3cd70e))
+* self-packages update ([eef65ee](https://github.com/Actunime/mongoose-models/commit/eef65ee7eb219eb07225597f63f2ab1a80f50dec))
+
 ## [1.0.6](https://github.com/Actunime/mongoose-models/compare/v1.0.5...v1.0.6) (2025-02-20)
 
 
