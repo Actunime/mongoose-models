@@ -5,7 +5,7 @@ const EmailCodeSchema = new Schema<IEmailCode>(
     {
         code: { type: String, required: true, unique: true, index: "text" },
         email: { type: String, required: true, index: "text" },
-        userId: { type: String, required: true, index: "text" },
+        accountId: { type: String, required: true, index: "text" },
         device: { type: String },
         createdAt: { type: Date, default: Date.now, index: { expires: '1h' } },
     },
