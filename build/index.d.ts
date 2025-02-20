@@ -7,7 +7,7 @@ export * from './_authorizationCodeModel';
 export * from './_characterModel';
 export * from './_companyModel';
 export * from './_emailCodeModel';
-export * from './_emailRegisterCodeModel';
+export * from './_preRegister';
 export * from './_groupeModel';
 export * from './_imageModel';
 export * from './_mangaModel';

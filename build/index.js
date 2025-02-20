@@ -23,7 +23,7 @@ __exportStar(require("./_authorizationCodeModel"), exports);
 __exportStar(require("./_characterModel"), exports);
 __exportStar(require("./_companyModel"), exports);
 __exportStar(require("./_emailCodeModel"), exports);
-__exportStar(require("./_emailRegisterCodeModel"), exports);
+__exportStar(require("./_preRegister"), exports);
 __exportStar(require("./_groupeModel"), exports);
 __exportStar(require("./_imageModel"), exports);
 __exportStar(require("./_mangaModel"), exports);

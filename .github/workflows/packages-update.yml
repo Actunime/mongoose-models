@@ -1,0 +1,29 @@
+name: Update packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      packageName:
+        description: 'Name of the package to update'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update specified package
+        run: pnpm up ${{ github.event.inputs.packageName }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add package.json pnpm-lock.yaml
+          git commit -m 'ci: Update ${{ github.event.inputs.packageName }}'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
