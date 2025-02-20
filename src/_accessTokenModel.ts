@@ -8,7 +8,7 @@ const AccessTokenSchema = new Schema<IAccessToken>(
     clientId: { type: String, required: true, index: "text" },
     userId: { type: String, required: true, index: "text" },
     device: { type: String },
-    lastActivity: { type: Date, default: Date.now, index: { expires: '3d' } },
+    lastActivity: { type: Date, default: Date.now, index: { expires: '7d' } },
     createdAt: { type: Date, default: Date.now },
   },
   { timestamps: true, id: false },
