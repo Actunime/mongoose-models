@@ -1,7 +1,7 @@
-import { IEmailRegisterCode } from "@actunime/types";
+import { IPreRegister } from "@actunime/types";
 import { Model, Schema, model, models } from "mongoose";
 
-const PreRegisterSchema = new Schema<IEmailRegisterCode>(
+const PreRegisterSchema = new Schema<IPreRegister>(
     {
         code: { type: String, required: true, unique: true, index: "text" },
         email: { type: String, required: true, unique: true, index: "text" },
@@ -20,5 +20,5 @@ export const withPreRegisterSchema = new Schema(
     { _id: false, toJSON: { virtuals: true } },
 );
 
-export const PreRegisterModel = (models.PreRegister as Model<IEmailRegisterCode>) ||
+export const PreRegisterModel = (models.PreRegister as Model<IPreRegister>) ||
     model("PreRegister", PreRegisterSchema);
