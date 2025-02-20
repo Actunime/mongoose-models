@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/Actunime/mongoose-models/compare/v1.0.7...v1.0.8) (2025-02-20)
+
+
+### Bug Fixes
+
+* add refreshToken ([ac9d21e](https://github.com/Actunime/mongoose-models/commit/ac9d21ef1e234c07749519d54227c2c68ab05313))
+* add refreshToken ([a4dc76d](https://github.com/Actunime/mongoose-models/commit/a4dc76df9dfd8c7f7a7281240699ec69533e9a86))
+
 ## [1.0.7](https://github.com/Actunime/mongoose-models/compare/v1.0.6...v1.0.7) (2025-02-20)
 
 
