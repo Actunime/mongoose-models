@@ -43,7 +43,8 @@ const AnimeSchema = new mongoose_1.Schema({
     cover: { type: _imageModel_1.withImage, default: undefined },
     banner: { type: _imageModel_1.withImage, default: undefined },
     synopsis: { type: String, default: undefined },
-    source: { type: _mangaModel_1.withMangaSchema, default: undefined },
+    manga: { type: _mangaModel_1.withMangaSchema, default: undefined },
+    source: { type: String, enum: types_1.MediaSourceArray, default: undefined },
     format: {
         type: String,
         enum: types_1.AnimeFormatArray,
@@ -52,7 +53,7 @@ const AnimeSchema = new mongoose_1.Schema({
     },
     vf: { type: Boolean, default: false },
     trailer: { type: String, default: undefined },
-    genres: { type: [String], default: [] },
+    genres: { type: [String], enum: utils_1.MediaGenresArray, default: [] },
     // themes: { type: [String], default: undefined },
     status: { type: String, enum: types_1.MediaStatusArray, default: "any" },
     episodes: { type: AnimeEpisodeSchema, default: {} },
@@ -83,7 +84,7 @@ async function CheckAnimeNextEpisode(callbacks) {
     });
     for await (const anime of animesNewEpisodes) {
         if (anime.episodes?.nextAiringDate &&
-            anime.episodes?.nextAiringDate.getTime() < Date.now()) {
+            new Date(anime.episodes?.nextAiringDate).getTime() < Date.now()) {
             if (anime.episodes?.airing !== undefined) {
                 if (anime.episodes?.total !== undefined) {
                     if (anime.episodes?.airing + 1 >= anime.episodes?.total) {
@@ -92,19 +93,19 @@ async function CheckAnimeNextEpisode(callbacks) {
                         anime.status = "ENDED";
                         if (!anime.date)
                             anime.date = {};
-                        anime.date.end = new Date();
+                        anime.date.end = new Date().toString();
                         callbacks?.onEnded?.(anime);
                     }
                     else {
                         anime.episodes.airing = anime.episodes?.airing + 1;
-                        anime.episodes.nextAiringDate = new Date(anime.episodes?.nextAiringDate.getTime() + 60000 * 60 * 24 * 7);
+                        anime.episodes.nextAiringDate = new Date(new Date(anime.episodes?.nextAiringDate).getTime() + 60000 * 60 * 24 * 7).toString();
                         callbacks?.onNewEpisode?.(anime);
                     }
                 }
                 else {
                     // Créer un signalement system pour le fait qu'il y a pas de total d'épisode
                     anime.episodes.airing = anime.episodes?.airing + 1;
-                    anime.episodes.nextAiringDate = new Date(anime.episodes?.nextAiringDate.getTime() + 60000 * 60 * 24 * 7);
+                    anime.episodes.nextAiringDate = new Date(new Date(anime.episodes?.nextAiringDate).getTime() + 60000 * 60 * 24 * 7).toString();
                     callbacks?.onWarnTotalEpisode?.(anime);
                     callbacks?.onNewEpisode?.(anime);
                 }
@@ -118,7 +119,7 @@ async function CheckAnimeNextEpisode(callbacks) {
                         anime.status = "ENDED";
                         if (!anime.date)
                             anime.date = {};
-                        anime.date.end = new Date();
+                        anime.date.end = new Date().toString();
                         callbacks?.onEnded?.(anime);
                     }
                     else {
@@ -130,9 +131,9 @@ async function CheckAnimeNextEpisode(callbacks) {
                     // Créer un signalement system pour le fait qu'il y a pas de total d'épisode
                     anime.episodes.airing = anime.episodes?.airing + 1;
                     if (anime.episodes.nextAiringDate)
-                        anime.episodes.nextAiringDate = new Date(anime.episodes.nextAiringDate.getTime() + 60000 * 60 * 24 * 7);
+                        anime.episodes.nextAiringDate = new Date(new Date(anime.episodes.nextAiringDate).getTime() + 60000 * 60 * 24 * 7).toString();
                     else {
-                        anime.episodes.nextAiringDate = new Date(Date.now() + 60000 * 60 * 24 * 7);
+                        anime.episodes.nextAiringDate = new Date(Date.now() + 60000 * 60 * 24 * 7).toString();
                     }
                     callbacks?.onWarnTotalEpisode?.(anime);
                     callbacks?.onNewEpisode?.(anime);
