@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AccessTokenModel = exports.withAccessTokenSchema = void 0;
 const mongoose_1 = require("mongoose");
 const AccessTokenSchema = new mongoose_1.Schema({
-    token: { type: String, required: true, unique: true, index: "text" },
-    refreshToken: { type: String, required: true, unique: true, index: "text" },
-    clientId: { type: String, required: true, index: "text" },
-    userId: { type: String, required: true, index: "text" },
+    token: { type: String, required: true },
+    refreshToken: { type: String, required: true },
+    clientId: { type: String, required: true },
+    userId: { type: String, required: true },
     device: { type: String },
     lastActivity: { type: Date, default: Date.now, index: { expires: '7d' } },
     createdAt: { type: Date, default: Date.now },

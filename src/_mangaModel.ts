@@ -42,6 +42,7 @@ export const withMangaSchema = new Schema(
   { _id: false, toJSON: { virtuals: true } },
 );
 
+
 const MangaSchema = new Schema<IManga>(
   {
     id: { type: String, default: () => genPublicID(5) },
