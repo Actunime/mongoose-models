@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/Actunime/mongoose-models/compare/v1.0.11...v1.0.12) (2025-03-11)
+
+
+### Bug Fixes
+
+* **types:** accountId ([fd4678c](https://github.com/Actunime/mongoose-models/commit/fd4678ced68cd18e6bc755e02cce8eac65cb578f))
+
 ## [1.0.11](https://github.com/Actunime/mongoose-models/compare/v1.0.10...v1.0.11) (2025-02-27)
 
 
