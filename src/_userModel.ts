@@ -34,6 +34,7 @@ const userSchema = new Schema<IUser>(
       index: true,
       default: () => genPublicID(),
     },
+    accountId: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     displayName: { type: String },
     bio: { type: String },

@@ -24,6 +24,7 @@ const userSchema = new mongoose_1.Schema({
         index: true,
         default: () => (0, utils_1.genPublicID)(),
     },
+    accountId: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     displayName: { type: String },
     bio: { type: String },

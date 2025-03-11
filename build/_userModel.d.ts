@@ -1,8 +1,8 @@
 import { Model, Schema } from "mongoose";
 import { type IUser, type IUserDisabled, type IUserPremium } from "@actunime/types";
-export declare const UserModel: Model<IUser, {}, {}, {}, import("mongoose").Document<unknown, {}, IUser> & IUser & Required<{
-    _id: Schema.Types.ObjectId;
-}> & {
+export declare const UserModel: Model<IUser, {}, {}, {}, import("mongoose").Document<unknown, {}, IUser> & IUser & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
     __v: number;
 }, any>;
 export declare const UserDisabledModel: Model<any, {}, {}, {}, any, any> | Model<IUserDisabled, {}, {}, {}, import("mongoose").Document<unknown, {}, IUserDisabled> & IUserDisabled & {
