@@ -53,7 +53,7 @@ const AnimeSchema = new mongoose_1.Schema({
     },
     vf: { type: Boolean, default: false },
     trailer: { type: String, default: undefined },
-    genres: { type: [String], enum: utils_1.MediaGenresArray, default: [] },
+    genres: { type: [String], enum: types_1.MediaGenresArray, default: [] },
     // themes: { type: [String], default: undefined },
     status: { type: String, enum: types_1.MediaStatusArray, default: "any" },
     episodes: { type: AnimeEpisodeSchema, default: {} },

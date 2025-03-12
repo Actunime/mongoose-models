@@ -4,8 +4,9 @@ import {
   AnimeFormatArray,
   MediaSourceArray,
   MediaStatusArray,
+  MediaGenresArray,
 } from "@actunime/types";
-import { genPublicID, MediaGenresArray } from "@actunime/utils";
+import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
 import { withCharacterSchema } from "./_characterModel";
 import { withCompanySchema } from "./_companyModel";
