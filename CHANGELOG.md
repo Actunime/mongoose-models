@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/Actunime/mongoose-models/compare/v1.0.12...v1.0.13) (2025-03-12)
+
+
+### Bug Fixes
+
+* **types:** genres ([a51ca2c](https://github.com/Actunime/mongoose-models/commit/a51ca2ccc79f67f67e7d6b9811bcf9e41a438915))
+
 ## [1.0.12](https://github.com/Actunime/mongoose-models/compare/v1.0.11...v1.0.12) (2025-03-11)
 
 
