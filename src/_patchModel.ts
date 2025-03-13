@@ -11,6 +11,7 @@ import { withSchema } from "./_mediaModel";
 const PatchSchema = new Schema<IPatch>(
   {
     id: { type: String, unique: true, default: () => genPublicID(8) },
+    ref: { type: withSchema, required: true },
     type: { type: String, enum: PatchTypeArray, required: true },
     status: { type: String, enum: PatchStatusArray, default: "PENDING" },
     target: { type: withSchema, required: true, default: undefined },
