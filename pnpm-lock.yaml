@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@actunime/types':
-        specifier: ^1.0.18
-        version: 1.0.18(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^1.0.19
+        version: 1.0.19(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@actunime/utils':
-        specifier: ^1.0.9
-        version: 1.0.10(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^1.0.11
+        version: 1.0.11(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -79,16 +79,16 @@ packages:
     resolution: {integrity: sha512-fPloW+wQHaEpMIP9IGznYn+xnQrOzAbRRuEQ0+GJ7d2oTRQyx7vs/YKehqyc+TAMEKApwYyNJgwhGmDSZZfivQ==, tarball: https://npm.pkg.github.com/download/@actunime/eslint-config/1.0.5/3932174bc851459683260c28103db1323d7129e6}
     engines: {node: '>=22'}
 
-  '@actunime/types@1.0.18':
-    resolution: {integrity: sha512-GQAwkQSLYOzHS4nBFVLPhKsalHx7aa1GVJmBGkfT8bWuiA5GsHrhF4gRyYhNV+9ORP+EG0MiWYYrwPEEp5oYUA==, tarball: https://npm.pkg.github.com/download/@actunime/types/1.0.18/a9a3fe6681dda030bb081a9878de117aa71464a9}
+  '@actunime/types@1.0.19':
+    resolution: {integrity: sha512-MwmVrC8dO/QNN/Dr05FCF3H95f3tFl9OUh7FxZWOGI5n/oV/sFXw6yJ05ORIrhYAuOUxI7opfF/soqZbmIJSBg==, tarball: https://npm.pkg.github.com/download/@actunime/types/1.0.19/7190018023c14695ac0ef656e654be3437382f3d}
     engines: {node: '>=22'}
 
   '@actunime/typescript-config@1.0.20':
     resolution: {integrity: sha512-trtWB176Rdiv/6c+s/HvGAcUSVuhXIwf56BRYkcI317BzMDnlRSyDybIZNWmoiOd/Lc+c5gHRaAn5lTyCk4Ibg==, tarball: https://npm.pkg.github.com/download/@actunime/typescript-config/1.0.20/84978c910c5541ebbc877d6bfbb9c2b6475ce8f3}
     engines: {node: '>=22'}
 
-  '@actunime/utils@1.0.10':
-    resolution: {integrity: sha512-UrLB1TH5wpA0c1+qcFX/led2wAOjLaO1acT0Vs2SuxiiG3KHWeuuukT/mGtmlaJjJuvV8GpOpkPq72IvEYblaA==, tarball: https://npm.pkg.github.com/download/@actunime/utils/1.0.10/ebb9f49b5c346cf4f1cbb011840b7b9799d3ab82}
+  '@actunime/utils@1.0.11':
+    resolution: {integrity: sha512-Bm4fkN5b45zQQGySelCanSxNer0Mm0rxhPAuwmCpw3dQSE/kP5gLVmfHMXJnry7/kmo0Gf9yCWUXGTxtfS8cNg==, tarball: https://npm.pkg.github.com/download/@actunime/utils/1.0.11/58c969bdcaf4be680a8176e976f62cfa54f48753}
     engines: {node: '>=22'}
 
   '@babel/code-frame@7.26.2':
@@ -2276,7 +2276,7 @@ snapshots:
       - semantic-release
       - supports-color
 
-  '@actunime/types@1.0.18(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@actunime/types@1.0.19(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tanstack/react-query': 5.66.9(react@19.0.0)
       mongoose: 8.11.0
@@ -2308,9 +2308,9 @@ snapshots:
       - semantic-release
       - supports-color
 
-  '@actunime/utils@1.0.10(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@actunime/utils@1.0.11(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@actunime/types': 1.0.18(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@actunime/types': 1.0.19(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       short-unique-id: 5.2.0
     transitivePeerDependencies:
       - '@auth/core'
