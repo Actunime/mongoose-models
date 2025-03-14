@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/Actunime/mongoose-models/compare/v1.0.14...v1.0.15) (2025-03-14)
+
+
+### Bug Fixes
+
+* **types:** fix activity & patch types update ([69cb635](https://github.com/Actunime/mongoose-models/commit/69cb635fadb2c2cc88bf8d3cf79ebd683ac2be71))
+
 ## [1.0.14](https://github.com/Actunime/mongoose-models/compare/v1.0.13...v1.0.14) (2025-03-13)
 
 
