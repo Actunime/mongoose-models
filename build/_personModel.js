@@ -12,8 +12,7 @@ const PersonSchema = new mongoose_1.Schema({
     isPreAdded: { type: Boolean, default: false },
     isGroupe: { type: Boolean, default: false },
     name: {
-        first: { type: String, required: true },
-        last: { type: String },
+        default: String,
         alias: [String],
     },
     birthDate: { type: Date, default: undefined },
