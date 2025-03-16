@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@actunime/types':
-        specifier: ^1.0.19
-        version: 1.0.19(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^1.0.20
+        version: 1.0.20(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@actunime/utils':
         specifier: ^1.0.11
         version: 1.0.11(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -79,8 +79,8 @@ packages:
     resolution: {integrity: sha512-fPloW+wQHaEpMIP9IGznYn+xnQrOzAbRRuEQ0+GJ7d2oTRQyx7vs/YKehqyc+TAMEKApwYyNJgwhGmDSZZfivQ==, tarball: https://npm.pkg.github.com/download/@actunime/eslint-config/1.0.5/3932174bc851459683260c28103db1323d7129e6}
     engines: {node: '>=22'}
 
-  '@actunime/types@1.0.19':
-    resolution: {integrity: sha512-MwmVrC8dO/QNN/Dr05FCF3H95f3tFl9OUh7FxZWOGI5n/oV/sFXw6yJ05ORIrhYAuOUxI7opfF/soqZbmIJSBg==, tarball: https://npm.pkg.github.com/download/@actunime/types/1.0.19/7190018023c14695ac0ef656e654be3437382f3d}
+  '@actunime/types@1.0.20':
+    resolution: {integrity: sha512-2ajEQ8ADsKfmH6u0me1EuxMyaScu7c4++2WY/H+nysx89l4++oPyN0cUW9oC5EYurHhrBausIdjSsUFK5bVUHw==, tarball: https://npm.pkg.github.com/download/@actunime/types/1.0.20/b5c031b195601d91da5a5c07d01950c2b1ae07bc}
     engines: {node: '>=22'}
 
   '@actunime/typescript-config@1.0.20':
@@ -703,8 +703,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001704:
-    resolution: {integrity: sha512-+L2IgBbV6gXB4ETf0keSvLr7JUrRVbIaB/lrQ1+z8mRcQiisG5k+lG6O4n6Y5q6f5EuNfaYXKgymucphlEXQew==}
+  caniuse-lite@1.0.30001705:
+    resolution: {integrity: sha512-S0uyMMiYvA7CxNgomYBwwwPUnWzFD83f3B1ce5jHUfHTH//QL6hHsreI8RVC5606R4ssqravelYO5TU6t8sEyg==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -1509,8 +1509,8 @@ packages:
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
 
-  nanoid@3.3.9:
-    resolution: {integrity: sha512-SppoicMGpZvbF1l3z4x7No3OlIjP7QJvC9XR7AhZr1kL133KHnKPztkKDc+Ir4aJ/1VhTySrtKhrsycmrMQfvg==}
+  nanoid@3.3.10:
+    resolution: {integrity: sha512-vSJJTG+t/dIKAUhUDw/dLdZ9s//5OxcHqLaDWWrW4Cdq7o6tdLIczUkMXt2MBNmk6sJRZBZRXVixs7URY1CmIg==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -2276,7 +2276,7 @@ snapshots:
       - semantic-release
       - supports-color
 
-  '@actunime/types@1.0.19(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@actunime/types@1.0.20(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tanstack/react-query': 5.66.9(react@19.0.0)
       mongoose: 8.11.0
@@ -2310,7 +2310,7 @@ snapshots:
 
   '@actunime/utils@1.0.11(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@actunime/types': 1.0.19(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@actunime/types': 1.0.20(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       short-unique-id: 5.2.0
     transitivePeerDependencies:
       - '@auth/core'
@@ -3003,7 +3003,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001704: {}
+  caniuse-lite@1.0.30001705: {}
 
   chalk@2.4.2:
     dependencies:
@@ -3775,7 +3775,7 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  nanoid@3.3.9: {}
+  nanoid@3.3.10: {}
 
   natural-compare@1.4.0: {}
 
@@ -3804,7 +3804,7 @@ snapshots:
       '@swc/counter': 0.1.3
       '@swc/helpers': 0.5.15
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001704
+      caniuse-lite: 1.0.30001705
       postcss: 8.4.31
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -3984,7 +3984,7 @@ snapshots:
 
   postcss@8.4.31:
     dependencies:
-      nanoid: 3.3.9
+      nanoid: 3.3.10
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
