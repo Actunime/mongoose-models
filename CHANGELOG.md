@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/Actunime/mongoose-models/compare/v1.0.17...v1.0.18) (2025-03-16)
+
+
+### Bug Fixes
+
+* **types:** add s to durationMinute ([51c9fe7](https://github.com/Actunime/mongoose-models/commit/51c9fe7dcad2cd41a34ccfbe57c015017d92745a))
+
 ## [1.0.17](https://github.com/Actunime/mongoose-models/compare/v1.0.16...v1.0.17) (2025-03-16)
 
 
