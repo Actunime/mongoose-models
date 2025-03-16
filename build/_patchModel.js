@@ -7,7 +7,7 @@ const mongoose_1 = require("mongoose");
 const _mediaModel_1 = require("./_mediaModel");
 const PatchSchema = new mongoose_1.Schema({
     id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(8) },
-    ref: { type: _mediaModel_1.withSchema, required: true },
+    ref: { type: _mediaModel_1.withSchema, default: undefined },
     type: { type: String, enum: types_1.PatchTypeArray, required: true },
     status: { type: String, enum: types_1.PatchStatusArray, default: "PENDING" },
     target: { type: _mediaModel_1.withSchema, required: true, default: undefined },
