@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/Actunime/mongoose-models/compare/v1.0.15...v1.0.16) (2025-03-16)
+
+
+### Bug Fixes
+
+* **types:** person ([6c132ce](https://github.com/Actunime/mongoose-models/commit/6c132cef1f037990d92050737c0d465f603ae9d8))
+
 ## [1.0.15](https://github.com/Actunime/mongoose-models/compare/v1.0.14...v1.0.15) (2025-03-14)
 
 
