@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/Actunime/mongoose-models/compare/v1.0.18...v1.0.19) (2025-03-16)
+
+
+### Bug Fixes
+
+* **types:** fix models types & array to undefined by default ([79ff4cd](https://github.com/Actunime/mongoose-models/commit/79ff4cd9ac54c830068026e1565d2f92c52850f3))
+
 ## [1.0.18](https://github.com/Actunime/mongoose-models/compare/v1.0.17...v1.0.18) (2025-03-16)
 
 
