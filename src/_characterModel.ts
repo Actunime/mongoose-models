@@ -14,7 +14,10 @@ const CharacterSchema = new Schema<ICharacter>(
     id: { type: String, default: () => genPublicID(5) },
     isVerified: { type: Boolean, default: false },
     isPreAdded: { type: Boolean, default: false },
-    name: { default: String, alias: [{ content: String }] },
+    name: {
+      default: { type: String, required: true },
+      alias: { type: [{ content: String }], default: undefined }
+    },
     age: Number,
     birthDate: Date,
     gender: {
@@ -29,7 +32,7 @@ const CharacterSchema = new Schema<ICharacter>(
     },
     bio: String,
     avatar: { type: withImage, default: undefined },
-    actors: [{ type: withPersonSchema, default: undefined }],
+    actors: { type: [withPersonSchema], default: undefined },
   },
   { timestamps: true, id: false, toJSON: { virtuals: true } },
 );

@@ -10,7 +10,10 @@ const CharacterSchema = new mongoose_1.Schema({
     id: { type: String, default: () => (0, utils_1.genPublicID)(5) },
     isVerified: { type: Boolean, default: false },
     isPreAdded: { type: Boolean, default: false },
-    name: { default: String, alias: [{ content: String }] },
+    name: {
+        default: { type: String, required: true },
+        alias: { type: [{ content: String }], default: undefined }
+    },
     age: Number,
     birthDate: Date,
     gender: {
@@ -25,7 +28,7 @@ const CharacterSchema = new mongoose_1.Schema({
     },
     bio: String,
     avatar: { type: _imageModel_1.withImage, default: undefined },
-    actors: [{ type: _personModel_1.withPersonSchema, default: undefined }],
+    actors: { type: [_personModel_1.withPersonSchema], default: undefined },
 }, { timestamps: true, id: false, toJSON: { virtuals: true } });
 // CharacterSchema.virtual('name.full').get(function () {
 //   return `${this.name.default}`.trim();

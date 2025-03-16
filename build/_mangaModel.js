@@ -54,9 +54,9 @@ const MangaSchema = new mongoose_1.Schema({
     adult: { type: Boolean, default: undefined },
     explicit: { type: Boolean, default: undefined },
     links: { type: [_mediaModel_1.MediaLinkSchema], default: undefined },
-    companys: { type: [_companyModel_1.withCompanySchema], default: [] },
-    staffs: { type: [_personModel_1.withPersonSchema], default: [] },
-    characters: { type: [_characterModel_1.withCharacterSchema], default: [] },
+    companys: { type: [_companyModel_1.withCompanySchema], default: undefined },
+    staffs: { type: [_personModel_1.withPersonSchema], default: undefined },
+    characters: { type: [_characterModel_1.withCharacterSchema], default: undefined },
 }, { timestamps: true, id: false });
 MangaSchema.virtual("groupe.data", {
     ref: "Groupe",

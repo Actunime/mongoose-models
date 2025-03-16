@@ -11,8 +11,8 @@ const PersonSchema = new Schema<IPerson>(
     isPreAdded: { type: Boolean, default: false },
     isGroupe: { type: Boolean, default: false },
     name: {
-      default: String,
-      alias: [String],
+      default: { type: String, required: true },
+      alias: { type: [{ content: String }], default: undefined },
     },
     birthDate: { type: Date, default: undefined },
     deathDate: { type: Date, default: undefined },

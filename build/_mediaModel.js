@@ -10,7 +10,7 @@ exports.MediaTitleSchema = new mongoose_1.Schema({
         index: "text",
         trim: true,
     },
-    alias: { type: [{ content: String }], trim: true, default: [] },
+    alias: { type: [{ content: String }], trim: true, default: undefined },
 }, { _id: false });
 exports.MediaDateSchema = new mongoose_1.Schema({
     start: { type: String },

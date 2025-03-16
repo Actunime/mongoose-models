@@ -73,9 +73,9 @@ const MangaSchema = new Schema<IManga>(
     explicit: { type: Boolean, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
 
-    companys: { type: [withCompanySchema], default: [] },
-    staffs: { type: [withPersonSchema], default: [] },
-    characters: { type: [withCharacterSchema], default: [] },
+    companys: { type: [withCompanySchema], default: undefined },
+    staffs: { type: [withPersonSchema], default: undefined },
+    characters: { type: [withCharacterSchema], default: undefined },
   },
   { timestamps: true, id: false },
 );

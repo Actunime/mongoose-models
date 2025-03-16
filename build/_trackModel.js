@@ -17,22 +17,16 @@ const TrackSchema = new mongoose_1.Schema({
         required: true,
     },
     name: {
-        type: {
-        // default: {
-        //   type: String,
-        //   required: true
-        // },
-        // native: {
-        //   type: String,
-        //   required: true
-        // }
+        default: { type: String, required: true },
+        alias: {
+            type: [{ content: { type: String } }],
+            default: undefined
         },
-        required: true,
     },
     pubDate: { type: Date, default: undefined },
     cover: { type: _imageModel_1.withImage, default: undefined },
-    artists: { type: [_personModel_1.withPersonSchema], default: [] },
-    links: { type: [_mediaModel_1.MediaLinkSchema], default: [] },
+    artists: { type: [_personModel_1.withPersonSchema], default: undefined },
+    links: { type: [_mediaModel_1.MediaLinkSchema], default: undefined },
 }, { timestamps: true, id: false });
 TrackSchema.virtual("artists.data", {
     ref: "Person",

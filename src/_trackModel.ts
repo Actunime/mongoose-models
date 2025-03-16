@@ -16,22 +16,16 @@ const TrackSchema = new Schema<ITrack>(
       required: true,
     },
     name: {
-      type: {
-        // default: {
-        //   type: String,
-        //   required: true
-        // },
-        // native: {
-        //   type: String,
-        //   required: true
-        // }
+      default: { type: String, required: true },
+      alias: {
+        type: [{ content: { type: String } }],
+        default: undefined
       },
-      required: true,
     },
     pubDate: { type: Date, default: undefined },
     cover: { type: withImage, default: undefined },
-    artists: { type: [withPersonSchema], default: [] },
-    links: { type: [MediaLinkSchema], default: [] },
+    artists: { type: [withPersonSchema], default: undefined },
+    links: { type: [MediaLinkSchema], default: undefined },
   },
   { timestamps: true, id: false },
 );
