@@ -27,7 +27,7 @@ const AnimeEpisodeSchema = new Schema<IAnimeEpisode>(
     airing: { type: Number },
     nextAiringDate: { type: Date },
     total: { type: Number },
-    durationMinute: { type: Number },
+    durationMinutes: { type: Number },
   },
   { _id: false },
 );

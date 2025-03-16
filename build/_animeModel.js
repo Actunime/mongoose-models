@@ -18,7 +18,7 @@ const AnimeEpisodeSchema = new mongoose_1.Schema({
     airing: { type: Number },
     nextAiringDate: { type: Date },
     total: { type: Number },
-    durationMinute: { type: Number },
+    durationMinutes: { type: Number },
 }, { _id: false });
 const withAnimeSchema = new mongoose_1.Schema({
     id: { type: String },
