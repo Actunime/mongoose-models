@@ -1,3 +1,11 @@
+## [1.0.20](https://github.com/Actunime/mongoose-models/compare/v1.0.19...v1.0.20) (2025-03-17)
+
+
+### Bug Fixes
+
+* **types:** alias.content => alias ([2ec6d0f](https://github.com/Actunime/mongoose-models/commit/2ec6d0f9b53663d0a05c52248f30582ac320d1ca))
+* **types:** bio => description ([a5f6ddd](https://github.com/Actunime/mongoose-models/commit/a5f6dddd887e23afeebe24b30aba269b1940a5de))
+
 ## [1.0.19](https://github.com/Actunime/mongoose-models/compare/v1.0.18...v1.0.19) (2025-03-16)
 
 
