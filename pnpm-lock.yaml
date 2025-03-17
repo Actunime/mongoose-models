@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@actunime/types':
-        specifier: ^1.0.27
-        version: 1.0.27(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^1.0.28
+        version: 1.0.28(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@actunime/utils':
         specifier: ^1.0.11
         version: 1.0.11(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -79,8 +79,8 @@ packages:
     resolution: {integrity: sha512-fPloW+wQHaEpMIP9IGznYn+xnQrOzAbRRuEQ0+GJ7d2oTRQyx7vs/YKehqyc+TAMEKApwYyNJgwhGmDSZZfivQ==, tarball: https://npm.pkg.github.com/download/@actunime/eslint-config/1.0.5/3932174bc851459683260c28103db1323d7129e6}
     engines: {node: '>=22'}
 
-  '@actunime/types@1.0.27':
-    resolution: {integrity: sha512-W59B92P1b0DCP5SXcsOouuhytMsJ0QdwyyoR/JcqiQtbZkXfxuInSZ3mpnlA8DRSbKNgO2AkDe/wJEJiwdX6ew==, tarball: https://npm.pkg.github.com/download/@actunime/types/1.0.27/9237a297a4522e0aa1305ce63283f668bf6a7aa9}
+  '@actunime/types@1.0.28':
+    resolution: {integrity: sha512-ZZlusSEnRXuMlmUe7wkmdh5Nj2w4YvxNxuZcd3PHly2iXNpsSq194WGaEYnDLFRPSH35hZamO+WX2WX9X+0gww==, tarball: https://npm.pkg.github.com/download/@actunime/types/1.0.28/ac48aa930512bbb96d8dca424ab814f5efaf7586}
     engines: {node: '>=22'}
 
   '@actunime/typescript-config@1.0.20':
@@ -2276,7 +2276,7 @@ snapshots:
       - semantic-release
       - supports-color
 
-  '@actunime/types@1.0.27(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@actunime/types@1.0.28(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tanstack/react-query': 5.66.9(react@19.0.0)
       mongoose: 8.11.0
@@ -2310,7 +2310,7 @@ snapshots:
 
   '@actunime/utils@1.0.11(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@actunime/types': 1.0.27(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@actunime/types': 1.0.28(next@15.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       short-unique-id: 5.2.0
     transitivePeerDependencies:
       - '@auth/core'
