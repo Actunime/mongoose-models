@@ -1,7 +1,7 @@
 import { ITrack, TrackTypeArray } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { MediaLinkSchema } from "./_mediaModel";
+import { MediaDateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
 import { withPersonSchema } from "./_personModel";
 import { withImage } from "./_imageModel";
 
@@ -15,14 +15,8 @@ const TrackSchema = new Schema<ITrack>(
       enum: TrackTypeArray,
       required: true,
     },
-    name: {
-      default: { type: String, required: true },
-      alias: {
-        type: [{ content: { type: String } }],
-        default: undefined
-      },
-    },
-    pubDate: { type: Date, default: undefined },
+    name: MediaTitleSchema,
+    pubDate: { type: MediaDateSchema, default: undefined },
     cover: { type: withImage, default: undefined },
     artists: { type: [withPersonSchema], default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },

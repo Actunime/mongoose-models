@@ -24,10 +24,10 @@ import { withImage } from "./_imageModel";
 
 const AnimeEpisodeSchema = new Schema<IAnimeEpisode>(
   {
-    airing: { type: Number },
-    nextAiringDate: { type: Date },
-    total: { type: Number },
-    durationMinutes: { type: Number },
+    airing: { type: Number, default: undefined },
+    nextAiringDate: { type: MediaDateSchema, default: undefined },
+    total: { type: Number, default: undefined },
+    durationMinutes: { type: Number, default: undefined },
   },
   { _id: false },
 );
@@ -100,81 +100,81 @@ const AnimeSchema = new Schema<IAnime>(
 // });
 
 
-export async function CheckAnimeNextEpisode(callbacks?: {
-  onNewEpisode?: (anime: IAnime) => void;
-  onWarnTotalEpisode?: (anime: IAnime) => void;
-  onEnded?: (anime: IAnime) => void;
-}) {
-  const animesNewEpisodes = await AnimeModel.find({
-    "episodes.nextAiringDate": { $lt: new Date() },
-  });
+// export async function CheckAnimeNextEpisode(callbacks?: {
+//   onNewEpisode?: (anime: IAnime) => void;
+//   onWarnTotalEpisode?: (anime: IAnime) => void;
+//   onEnded?: (anime: IAnime) => void;
+// }) {
+//   const animesNewEpisodes = await AnimeModel.find({
+//     "episodes.nextAiringDate": { $lt: new Date() },
+//   });
 
-  for await (const anime of animesNewEpisodes) {
-    if (
-      anime.episodes?.nextAiringDate &&
-      new Date(anime.episodes?.nextAiringDate).getTime() < Date.now()
-    ) {
-      if (anime.episodes?.airing !== undefined) {
-        if (anime.episodes?.total !== undefined) {
-          if (anime.episodes?.airing + 1 >= anime.episodes?.total) {
-            anime.episodes.airing = anime.episodes?.total;
-            anime.episodes.nextAiringDate = undefined;
-            anime.status = "ENDED";
-            if (!anime.date) anime.date = {};
-            anime.date.end = new Date().toString();
-            callbacks?.onEnded?.(anime);
-          } else {
-            anime.episodes.airing = anime.episodes?.airing + 1;
-            anime.episodes.nextAiringDate = new Date(
-              new Date(anime.episodes?.nextAiringDate).getTime() + 60000 * 60 * 24 * 7,
-            ).toString();
-            callbacks?.onNewEpisode?.(anime);
-          }
-        } else {
-          // Créer un signalement system pour le fait qu'il y a pas de total d'épisode
-          anime.episodes.airing = anime.episodes?.airing + 1;
-          anime.episodes.nextAiringDate = new Date(
-            new Date(anime.episodes?.nextAiringDate).getTime() + 60000 * 60 * 24 * 7,
-          ).toString();
-          callbacks?.onWarnTotalEpisode?.(anime);
-          callbacks?.onNewEpisode?.(anime);
-        }
-      } else {
-        anime.episodes.airing = 0;
+//   for await (const anime of animesNewEpisodes) {
+//     if (
+//       anime.episodes?.nextAiringDate &&
+//       new Date(anime.episodes?.nextAiringDate).getTime() < Date.now()
+//     ) {
+//       if (anime.episodes?.airing !== undefined) {
+//         if (anime.episodes?.total !== undefined) {
+//           if (anime.episodes?.airing + 1 >= anime.episodes?.total) {
+//             anime.episodes.airing = anime.episodes?.total;
+//             anime.episodes.nextAiringDate = undefined;
+//             anime.status = "ENDED";
+//             if (!anime.date) anime.date = {};
+//             anime.date.end = new Date().toString();
+//             callbacks?.onEnded?.(anime);
+//           } else {
+//             anime.episodes.airing = anime.episodes?.airing + 1;
+//             anime.episodes.nextAiringDate = new Date(
+//               new Date(anime.episodes?.nextAiringDate).getTime() + 60000 * 60 * 24 * 7,
+//             ).toString();
+//             callbacks?.onNewEpisode?.(anime);
+//           }
+//         } else {
+//           // Créer un signalement system pour le fait qu'il y a pas de total d'épisode
+//           anime.episodes.airing = anime.episodes?.airing + 1;
+//           anime.episodes.nextAiringDate = new Date(
+//             new Date(anime.episodes?.nextAiringDate).getTime() + 60000 * 60 * 24 * 7,
+//           ).toString();
+//           callbacks?.onWarnTotalEpisode?.(anime);
+//           callbacks?.onNewEpisode?.(anime);
+//         }
+//       } else {
+//         anime.episodes.airing = 0;
 
-        if (anime.episodes?.total !== undefined) {
-          if (anime.episodes.airing + 1 >= anime.episodes?.total) {
-            anime.episodes.airing = anime.episodes?.total;
-            anime.episodes.nextAiringDate = undefined;
-            anime.status = "ENDED";
-            if (!anime.date) anime.date = {};
-            anime.date.end = new Date().toString();
-            callbacks?.onEnded?.(anime);
-          } else {
-            anime.episodes.airing = anime.episodes?.airing + 1;
-            callbacks?.onNewEpisode?.(anime);
-          }
-        } else {
-          // Créer un signalement system pour le fait qu'il y a pas de total d'épisode
-          anime.episodes.airing = anime.episodes?.airing + 1;
-          if (anime.episodes.nextAiringDate)
-            anime.episodes.nextAiringDate = new Date(
-              new Date(anime.episodes.nextAiringDate).getTime() + 60000 * 60 * 24 * 7,
-            ).toString();
-          else {
-            anime.episodes.nextAiringDate = new Date(
-              Date.now() + 60000 * 60 * 24 * 7,
-            ).toString();
-          }
-          callbacks?.onWarnTotalEpisode?.(anime);
-          callbacks?.onNewEpisode?.(anime);
-        }
-      }
+//         if (anime.episodes?.total !== undefined) {
+//           if (anime.episodes.airing + 1 >= anime.episodes?.total) {
+//             anime.episodes.airing = anime.episodes?.total;
+//             anime.episodes.nextAiringDate = undefined;
+//             anime.status = "ENDED";
+//             if (!anime.date) anime.date = {};
+//             anime.date.end = new Date().toString();
+//             callbacks?.onEnded?.(anime);
+//           } else {
+//             anime.episodes.airing = anime.episodes?.airing + 1;
+//             callbacks?.onNewEpisode?.(anime);
+//           }
+//         } else {
+//           // Créer un signalement system pour le fait qu'il y a pas de total d'épisode
+//           anime.episodes.airing = anime.episodes?.airing + 1;
+//           if (anime.episodes.nextAiringDate)
+//             anime.episodes.nextAiringDate = new Date(
+//               new Date(anime.episodes.nextAiringDate).getTime() + 60000 * 60 * 24 * 7,
+//             ).toString();
+//           else {
+//             anime.episodes.nextAiringDate = new Date(
+//               Date.now() + 60000 * 60 * 24 * 7,
+//             ).toString();
+//           }
+//           callbacks?.onWarnTotalEpisode?.(anime);
+//           callbacks?.onNewEpisode?.(anime);
+//         }
+//       }
 
-      await anime.save();
-    }
-  }
-}
+//       await anime.save();
+//     }
+//   }
+// }
 
 AnimeSchema.virtual("groupe.data", {
   ref: "Groupe",

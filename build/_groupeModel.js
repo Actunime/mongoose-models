@@ -3,11 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GroupeModel = exports.withGroupeSchema = void 0;
 const utils_1 = require("@actunime/utils");
 const mongoose_1 = require("mongoose");
+const _mediaModel_1 = require("./_mediaModel");
 const GroupeSchema = new mongoose_1.Schema({
     id: { type: String, default: () => (0, utils_1.genPublicID)(5) },
     isVerified: { type: Boolean, default: false },
     isPreAdded: { type: Boolean, default: false },
-    name: { type: String, unique: true, required: true, index: "text" },
+    name: _mediaModel_1.MediaTitleSchema,
 }, { timestamps: true, id: false, toJSON: { virtuals: true } });
 GroupeSchema.virtual("animes", {
     ref: "Anime",

@@ -8,18 +8,16 @@ import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
 import { withPersonSchema } from "./_personModel";
 import { withImage } from "./_imageModel";
+import { MediaDateSchema, MediaTitleSchema } from "./_mediaModel";
 
 const CharacterSchema = new Schema<ICharacter>(
   {
     id: { type: String, default: () => genPublicID(5) },
     isVerified: { type: Boolean, default: false },
     isPreAdded: { type: Boolean, default: false },
-    name: {
-      default: { type: String, required: true },
-      alias: { type: [String], trim: true, default: undefined }
-    },
+    name: MediaTitleSchema,
     age: Number,
-    birthDate: Date,
+    birthDate: MediaDateSchema,
     gender: {
       type: String,
       enum: CharacterGenderArray,

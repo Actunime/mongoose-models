@@ -10,11 +10,11 @@ const CompanySchema = new mongoose_1.Schema({
     id: { type: String, default: () => (0, utils_1.genPublicID)(5) },
     isVerified: { type: Boolean, default: false },
     isPreAdded: { type: Boolean, default: false },
-    name: { type: String, required: true, unique: true, index: "text" },
+    name: _mediaModel_1.MediaTitleSchema,
     type: { type: String, enum: types_1.CompanyTypeArray, default: undefined },
     links: { type: [_mediaModel_1.MediaLinkSchema], default: undefined },
     logo: { type: _imageModel_1.withImage, default: undefined },
-    createdDate: { type: Date, default: undefined },
+    createdDate: { type: _mediaModel_1.MediaDateSchema, default: undefined },
 }, { timestamps: true, id: false });
 exports.withCompanySchema = new mongoose_1.Schema({
     id: { type: String },

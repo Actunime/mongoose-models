@@ -6,16 +6,14 @@ const utils_1 = require("@actunime/utils");
 const mongoose_1 = require("mongoose");
 const _personModel_1 = require("./_personModel");
 const _imageModel_1 = require("./_imageModel");
+const _mediaModel_1 = require("./_mediaModel");
 const CharacterSchema = new mongoose_1.Schema({
     id: { type: String, default: () => (0, utils_1.genPublicID)(5) },
     isVerified: { type: Boolean, default: false },
     isPreAdded: { type: Boolean, default: false },
-    name: {
-        default: { type: String, required: true },
-        alias: { type: [String], trim: true, default: undefined }
-    },
+    name: _mediaModel_1.MediaTitleSchema,
     age: Number,
-    birthDate: Date,
+    birthDate: _mediaModel_1.MediaDateSchema,
     gender: {
         type: String,
         enum: types_1.CharacterGenderArray,

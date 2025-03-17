@@ -11,9 +11,9 @@ const _mediaModel_1 = require("./_mediaModel");
 const _personModel_1 = require("./_personModel");
 const _imageModel_1 = require("./_imageModel");
 const MangaChapterVolumesSchema = new mongoose_1.Schema({
-    airing: { type: Number },
-    nextAiringDate: { type: Date },
-    total: { type: Number },
+    airing: { type: Number, default: undefined },
+    nextAiringDate: { type: _mediaModel_1.MediaDateSchema, default: undefined },
+    total: { type: Number, default: undefined },
 });
 exports.withMangaSchema = new mongoose_1.Schema({
     id: { type: String },

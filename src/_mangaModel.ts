@@ -20,9 +20,9 @@ import { withPersonSchema } from "./_personModel";
 import { withImage } from "./_imageModel";
 
 const MangaChapterVolumesSchema = new Schema<IMangaChapterVolums>({
-  airing: { type: Number },
-  nextAiringDate: { type: Date },
-  total: { type: Number },
+  airing: { type: Number, default: undefined },
+  nextAiringDate: { type: MediaDateSchema, default: undefined },
+  total: { type: Number, default: undefined },
 });
 
 export const withMangaSchema = new Schema(

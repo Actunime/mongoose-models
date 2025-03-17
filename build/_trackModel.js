@@ -16,14 +16,8 @@ const TrackSchema = new mongoose_1.Schema({
         enum: types_1.TrackTypeArray,
         required: true,
     },
-    name: {
-        default: { type: String, required: true },
-        alias: {
-            type: [{ content: { type: String } }],
-            default: undefined
-        },
-    },
-    pubDate: { type: Date, default: undefined },
+    name: _mediaModel_1.MediaTitleSchema,
+    pubDate: { type: _mediaModel_1.MediaDateSchema, default: undefined },
     cover: { type: _imageModel_1.withImage, default: undefined },
     artists: { type: [_personModel_1.withPersonSchema], default: undefined },
     links: { type: [_mediaModel_1.MediaLinkSchema], default: undefined },

@@ -6,7 +6,7 @@ export const MediaTitleSchema = new Schema<IMediaTitle>(
     default: {
       type: String,
       required: true,
-      unique: true,
+      // unique: true,
       index: "text",
       trim: true,
     },
@@ -15,13 +15,39 @@ export const MediaTitleSchema = new Schema<IMediaTitle>(
   { _id: false },
 );
 
-export const MediaDateSchema = new Schema<IMediaDate>(
-  {
-    start: { type: String },
-    end: { type: String },
+
+export const MediaDateSchema = new Schema<IMediaDate>({
+  year: {
+    type: Number,
+    required: false, // L'année est facultative
+    min: 0 // Optionnel : éviter des valeurs négatives
   },
-  { _id: false },
-);
+  month: {
+    type: Number,
+    required: false, // Le mois est facultatif
+    min: 1,
+    max: 12
+  },
+  day: {
+    type: Number,
+    required: false, // Le jour est facultatif
+    min: 1,
+    max: 31
+  },
+  hour: {
+    type: Number,
+    required: false, // Heure facultative
+    min: 0,
+    max: 23
+  },
+  minute: {
+    type: Number,
+    required: false, // Minute facultative
+    min: 0,
+    max: 59
+  }
+}, { _id: false });
+
 
 export const MediaImageSchema = new Schema(
   {
