@@ -1,4 +1,4 @@
-import { IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
+import { IDate, IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
 import { Schema } from "mongoose";
 
 export const MediaTitleSchema = new Schema<IMediaTitle>(
@@ -16,7 +16,7 @@ export const MediaTitleSchema = new Schema<IMediaTitle>(
 );
 
 
-export const MediaDateSchema = new Schema<IMediaDate>({
+const DateSchema = new Schema<IDate>({
   year: {
     type: Number,
     required: false, // L'année est facultative
@@ -48,6 +48,10 @@ export const MediaDateSchema = new Schema<IMediaDate>({
   }
 }, { _id: false });
 
+export const MediaDateSchema = new Schema<IMediaDate>({
+  start: { type: DateSchema, required: false },
+  end: { type: DateSchema, required: false },
+}, { _id: false });
 
 export const MediaImageSchema = new Schema(
   {

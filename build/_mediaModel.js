@@ -12,7 +12,7 @@ exports.MediaTitleSchema = new mongoose_1.Schema({
     },
     alias: { type: [String], trim: true, default: undefined },
 }, { _id: false });
-exports.MediaDateSchema = new mongoose_1.Schema({
+const DateSchema = new mongoose_1.Schema({
     year: {
         type: Number,
         required: false, // L'année est facultative
@@ -42,6 +42,10 @@ exports.MediaDateSchema = new mongoose_1.Schema({
         min: 0,
         max: 59
     }
+}, { _id: false });
+exports.MediaDateSchema = new mongoose_1.Schema({
+    start: { type: DateSchema, required: false },
+    end: { type: DateSchema, required: false },
 }, { _id: false });
 exports.MediaImageSchema = new mongoose_1.Schema({
     cover: { type: String },
