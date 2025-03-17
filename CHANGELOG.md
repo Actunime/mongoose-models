@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/Actunime/mongoose-models/compare/v1.0.20...v1.0.21) (2025-03-17)
+
+
+### Bug Fixes
+
+* **types:** name => mediatitleschema & changement du format des dates ([7ecac70](https://github.com/Actunime/mongoose-models/commit/7ecac70b172fd701095b896e652cd1d78af08f8d))
+
 ## [1.0.20](https://github.com/Actunime/mongoose-models/compare/v1.0.19...v1.0.20) (2025-03-17)
 
 
