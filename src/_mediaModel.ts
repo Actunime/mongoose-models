@@ -34,13 +34,19 @@ const DateSchema = new Schema<IDate>({
     min: 1,
     max: 31
   },
-  hour: {
+  hours: {
     type: Number,
     required: false, // Heure facultative
     min: 0,
     max: 23
   },
-  minute: {
+  minutes: {
+    type: Number,
+    required: false, // Minute facultative
+    min: 0,
+    max: 59
+  },
+  seconds: {
     type: Number,
     required: false, // Minute facultative
     min: 0,
