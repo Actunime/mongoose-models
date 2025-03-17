@@ -10,7 +10,7 @@ export const MediaTitleSchema = new Schema<IMediaTitle>(
       index: "text",
       trim: true,
     },
-    alias: { type: [{ content: String }], trim: true, default: undefined },
+    alias: { type: [String], trim: true, default: undefined },
   },
   { _id: false },
 );

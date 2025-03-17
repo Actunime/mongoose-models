@@ -12,7 +12,7 @@ const PersonSchema = new Schema<IPerson>(
     isGroupe: { type: Boolean, default: false },
     name: {
       default: { type: String, required: true },
-      alias: { type: [{ content: String }], default: undefined },
+      alias: { type: [String], trim: true, default: undefined },
     },
     birthDate: { type: Date, default: undefined },
     deathDate: { type: Date, default: undefined },

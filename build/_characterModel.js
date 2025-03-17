@@ -12,7 +12,7 @@ const CharacterSchema = new mongoose_1.Schema({
     isPreAdded: { type: Boolean, default: false },
     name: {
         default: { type: String, required: true },
-        alias: { type: [{ content: String }], default: undefined }
+        alias: { type: [String], trim: true, default: undefined }
     },
     age: Number,
     birthDate: Date,
