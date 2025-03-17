@@ -27,7 +27,7 @@ const userSchema = new mongoose_1.Schema({
     accountId: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     displayName: { type: String },
-    bio: { type: String },
+    description: { type: String },
     roles: { type: [String], default: ["MEMBER"] },
     avatar: { type: _imageModel_1.withImage, default: undefined },
     banner: { type: _imageModel_1.withImage, default: undefined },

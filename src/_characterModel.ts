@@ -30,7 +30,7 @@ const CharacterSchema = new Schema<ICharacter>(
       enum: CharacterSpeciesArray,
       required: true,
     },
-    bio: String,
+    description: String,
     avatar: { type: withImage, default: undefined },
     actors: { type: [withPersonSchema], default: undefined },
   },

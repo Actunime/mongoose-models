@@ -26,7 +26,7 @@ const CharacterSchema = new mongoose_1.Schema({
         enum: types_1.CharacterSpeciesArray,
         required: true,
     },
-    bio: String,
+    description: String,
     avatar: { type: _imageModel_1.withImage, default: undefined },
     actors: { type: [_personModel_1.withPersonSchema], default: undefined },
 }, { timestamps: true, id: false, toJSON: { virtuals: true } });

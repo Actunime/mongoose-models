@@ -16,7 +16,7 @@ const PersonSchema = new Schema<IPerson>(
     },
     birthDate: { type: Date, default: undefined },
     deathDate: { type: Date, default: undefined },
-    bio: String,
+    description: String,
     avatar: { type: withImage, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
   },

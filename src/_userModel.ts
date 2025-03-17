@@ -37,7 +37,7 @@ const userSchema = new Schema<IUser>(
     accountId: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     displayName: { type: String },
-    bio: { type: String },
+    description: { type: String },
     roles: { type: [String], default: ["MEMBER"] },
     avatar: { type: withImage, default: undefined },
     banner: { type: withImage, default: undefined },

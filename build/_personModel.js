@@ -17,7 +17,7 @@ const PersonSchema = new mongoose_1.Schema({
     },
     birthDate: { type: Date, default: undefined },
     deathDate: { type: Date, default: undefined },
-    bio: String,
+    description: String,
     avatar: { type: _imageModel_1.withImage, default: undefined },
     links: { type: [_mediaModel_1.MediaLinkSchema], default: undefined },
 }, { timestamps: true, id: false, toJSON: { virtuals: true } });
