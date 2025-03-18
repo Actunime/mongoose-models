@@ -1,3 +1,12 @@
+## [1.0.31](https://github.com/Actunime/mongoose-models/compare/v1.0.30...v1.0.31) (2025-03-18)
+
+
+### Bug Fixes
+
+* dqzqdzqdz ([254bcc6](https://github.com/Actunime/mongoose-models/commit/254bcc6915015714d091981d30f3c8eafd68e031))
+* dqzqdzqdz ([49df3da](https://github.com/Actunime/mongoose-models/commit/49df3dafaac8c53d12fa8ec98014d26ba8dfb129))
+* **rollback:** transition models => just schema ([81ef9fd](https://github.com/Actunime/mongoose-models/commit/81ef9fd316bac4707a0ac7f5350af6d369ea4d58))
+
 ## [1.0.29](https://github.com/Actunime/mongoose-models/compare/v1.0.28...v1.0.29) (2025-03-18)
 
 
