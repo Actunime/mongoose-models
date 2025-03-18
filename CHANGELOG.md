@@ -1,3 +1,10 @@
+## [1.0.30](https://github.com/Actunime/mongoose-models/compare/v1.0.29...v1.0.30) (2025-03-18)
+
+
+### Bug Fixes
+
+* **v2:** transition models => just schema ([43dee7f](https://github.com/Actunime/mongoose-models/commit/43dee7f4b41a58232080820f127a67ef2c641904))
+
 ## [1.0.29](https://github.com/Actunime/mongoose-models/compare/v1.0.28...v1.0.29) (2025-03-18)
 
 
