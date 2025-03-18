@@ -16,7 +16,7 @@ const TrackSchema = new Schema<ITrack>(
       required: true,
     },
     name: DateSchema,
-    pubDate: { type: MediaDateSchema, default: undefined },
+    releaseDate: { type: MediaDateSchema, default: undefined },
     cover: { type: withImage, default: undefined },
     artists: { type: [withPersonSchema], default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
