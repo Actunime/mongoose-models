@@ -6,11 +6,7 @@ const utils_1 = require("@actunime/utils");
 const mongoose_1 = require("mongoose");
 const _personSchema_1 = require("./_personSchema");
 const _mediaSchema_1 = require("./_mediaSchema");
-<<<<<<< HEAD
 exports.CharacterSchema = new mongoose_1.Schema({
-=======
-const CharacterSchema = new mongoose_1.Schema({
->>>>>>> fd9c344d5366b07c982f61300a2170f5f70644aa
     id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(5) },
     name: _mediaSchema_1.MediaNameSchema,
     age: { type: Number, default: undefined },
