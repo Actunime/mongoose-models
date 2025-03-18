@@ -15,7 +15,7 @@ const _imageModel_1 = require("./_imageModel");
 // import { DiscordWebhook } from "@actunime/utils-server";
 const AnimeEpisodeSchema = new mongoose_1.Schema({
     airing: { type: Number, default: undefined },
-    nextAiringDate: { type: _mediaModel_1.MediaDateSchema, default: undefined },
+    nextAiringDate: { type: _mediaModel_1.DateSchema, default: undefined },
     total: { type: Number, default: undefined },
     durationMinutes: { type: Number, default: undefined },
 }, { _id: false });

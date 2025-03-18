@@ -13,7 +13,7 @@ const CharacterSchema = new mongoose_1.Schema({
     isPreAdded: { type: Boolean, default: false },
     name: _mediaModel_1.MediaTitleSchema,
     age: Number,
-    birthDate: _mediaModel_1.MediaDateSchema,
+    birthDate: _mediaModel_1.DateSchema,
     gender: {
         type: String,
         enum: types_1.CharacterGenderArray,

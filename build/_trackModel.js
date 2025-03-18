@@ -16,7 +16,7 @@ const TrackSchema = new mongoose_1.Schema({
         enum: types_1.TrackTypeArray,
         required: true,
     },
-    name: _mediaModel_1.MediaTitleSchema,
+    name: _mediaModel_1.DateSchema,
     pubDate: { type: _mediaModel_1.MediaDateSchema, default: undefined },
     cover: { type: _imageModel_1.withImage, default: undefined },
     artists: { type: [_personModel_1.withPersonSchema], default: undefined },

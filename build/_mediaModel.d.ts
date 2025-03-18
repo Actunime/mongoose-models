@@ -1,10 +1,19 @@
-import { IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
+import { IDate, IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
 import { Schema } from "mongoose";
 export declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;
 }, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IMediaTitle, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IMediaTitle>> & import("mongoose").FlatRecord<IMediaTitle> & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}>;
+export declare const DateSchema: Schema<IDate, import("mongoose").Model<IDate, any, any, any, import("mongoose").Document<unknown, any, IDate> & IDate & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IDate, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IDate>> & import("mongoose").FlatRecord<IDate> & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

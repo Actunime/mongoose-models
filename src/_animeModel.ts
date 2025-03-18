@@ -13,6 +13,7 @@ import { withCompanySchema } from "./_companyModel";
 import { withGroupeSchema } from "./_groupeModel";
 import { withMangaSchema } from "./_mangaModel";
 import {
+  DateSchema,
   MediaDateSchema,
   MediaLinkSchema,
   MediaTitleSchema,
@@ -25,7 +26,7 @@ import { withImage } from "./_imageModel";
 const AnimeEpisodeSchema = new Schema<IAnimeEpisode>(
   {
     airing: { type: Number, default: undefined },
-    nextAiringDate: { type: MediaDateSchema, default: undefined },
+    nextAiringDate: { type: DateSchema, default: undefined },
     total: { type: Number, default: undefined },
     durationMinutes: { type: Number, default: undefined },
   },

@@ -1,7 +1,7 @@
 import { ICompany, CompanyTypeArray } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { MediaDateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
+import { DateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
 import { withImage } from "./_imageModel";
 
 const CompanySchema = new Schema<ICompany>(
@@ -13,7 +13,7 @@ const CompanySchema = new Schema<ICompany>(
     type: { type: String, enum: CompanyTypeArray, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
     logo: { type: withImage, default: undefined },
-    createdDate: { type: MediaDateSchema, default: undefined },
+    createdDate: { type: DateSchema, default: undefined },
   },
   { timestamps: true, id: false },
 );

@@ -14,7 +14,7 @@ const CompanySchema = new mongoose_1.Schema({
     type: { type: String, enum: types_1.CompanyTypeArray, default: undefined },
     links: { type: [_mediaModel_1.MediaLinkSchema], default: undefined },
     logo: { type: _imageModel_1.withImage, default: undefined },
-    createdDate: { type: _mediaModel_1.MediaDateSchema, default: undefined },
+    createdDate: { type: _mediaModel_1.DateSchema, default: undefined },
 }, { timestamps: true, id: false });
 exports.withCompanySchema = new mongoose_1.Schema({
     id: { type: String },

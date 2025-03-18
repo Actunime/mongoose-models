@@ -1,7 +1,7 @@
 import { IPerson, PersonRoleArray } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { MediaDateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
+import { DateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
 import { withImage } from "./_imageModel";
 
 const PersonSchema = new Schema<IPerson>(
@@ -11,8 +11,8 @@ const PersonSchema = new Schema<IPerson>(
     isPreAdded: { type: Boolean, default: false },
     isGroupe: { type: Boolean, default: false },
     name: MediaTitleSchema,
-    birthDate: { type: MediaDateSchema, default: undefined },
-    deathDate: { type: MediaDateSchema, default: undefined },
+    birthDate: { type: DateSchema, default: undefined },
+    deathDate: { type: DateSchema, default: undefined },
     description: String,
     avatar: { type: withImage, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },

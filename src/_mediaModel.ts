@@ -16,7 +16,7 @@ export const MediaTitleSchema = new Schema<IMediaTitle>(
 );
 
 
-const DateSchema = new Schema<IDate>({
+export const DateSchema = new Schema<IDate>({
   year: {
     type: Number,
     required: false, // L'année est facultative

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.withSchema = exports.MediaLinkSchema = exports.MediaImageSchema = exports.MediaDateSchema = exports.MediaTitleSchema = void 0;
+exports.withSchema = exports.MediaLinkSchema = exports.MediaImageSchema = exports.MediaDateSchema = exports.DateSchema = exports.MediaTitleSchema = void 0;
 const mongoose_1 = require("mongoose");
 exports.MediaTitleSchema = new mongoose_1.Schema({
     default: {
@@ -12,7 +12,7 @@ exports.MediaTitleSchema = new mongoose_1.Schema({
     },
     alias: { type: [String], trim: true, default: undefined },
 }, { _id: false });
-const DateSchema = new mongoose_1.Schema({
+exports.DateSchema = new mongoose_1.Schema({
     year: {
         type: Number,
         required: false, // L'année est facultative
@@ -50,8 +50,8 @@ const DateSchema = new mongoose_1.Schema({
     }
 }, { _id: false });
 exports.MediaDateSchema = new mongoose_1.Schema({
-    start: { type: DateSchema, required: false },
-    end: { type: DateSchema, required: false },
+    start: { type: exports.DateSchema, required: false },
+    end: { type: exports.DateSchema, required: false },
 }, { _id: false });
 exports.MediaImageSchema = new mongoose_1.Schema({
     cover: { type: String },

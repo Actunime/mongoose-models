@@ -14,8 +14,8 @@ const withUserAnimeListeSchema = new mongoose_1.Schema({
     note: { type: String, default: undefined },
     favoris: { type: Boolean, default: false },
     rank: { type: Number, default: undefined },
-    startedDate: { type: String, default: undefined },
-    completedDate: { type: String, default: undefined },
+    startedDate: { type: _mediaModel_1.DateSchema, default: undefined },
+    completedDate: { type: _mediaModel_1.DateSchema, default: undefined },
 }, { _id: false, timestamps: true, toJSON: { virtuals: true } });
 const userSchema = new mongoose_1.Schema({
     id: {

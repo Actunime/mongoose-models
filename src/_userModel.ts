@@ -7,7 +7,7 @@ import {
   type IUserPremium,
 } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
-import { withSchema } from "./_mediaModel";
+import { DateSchema, withSchema } from "./_mediaModel";
 import { withImage } from "./_imageModel";
 
 const withUserAnimeListeSchema = new Schema<IUserAnimeListe>(
@@ -19,8 +19,8 @@ const withUserAnimeListeSchema = new Schema<IUserAnimeListe>(
     note: { type: String, default: undefined },
     favoris: { type: Boolean, default: false },
     rank: { type: Number, default: undefined },
-    startedDate: { type: String, default: undefined },
-    completedDate: { type: String, default: undefined },
+    startedDate: { type: DateSchema, default: undefined },
+    completedDate: { type: DateSchema, default: undefined },
   },
   { _id: false, timestamps: true, toJSON: { virtuals: true } },
 );
