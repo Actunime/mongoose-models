@@ -5,7 +5,11 @@ const mongoose_1 = require("mongoose");
 const types_1 = require("@actunime/types");
 const utils_1 = require("@actunime/utils");
 const _mediaSchema_1 = require("./_mediaSchema");
+<<<<<<< HEAD
 exports.ImageSchema = new mongoose_1.Schema({
+=======
+const ImageSchema = new mongoose_1.Schema({
+>>>>>>> fd9c344d5366b07c982f61300a2170f5f70644aa
     id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(5) },
     label: { type: String, enum: types_1.ImageLabelArray, required: true },
     target: { type: _mediaSchema_1.MediaRelationSchema, required: true },

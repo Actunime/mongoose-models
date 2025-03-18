@@ -6,7 +6,11 @@ const utils_1 = require("@actunime/utils");
 const mongoose_1 = require("mongoose");
 const _mediaSchema_1 = require("./_mediaSchema");
 const _personSchema_1 = require("./_personSchema");
+<<<<<<< HEAD
 exports.TrackSchema = new mongoose_1.Schema({
+=======
+const TrackSchema = new mongoose_1.Schema({
+>>>>>>> fd9c344d5366b07c982f61300a2170f5f70644aa
     id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(5) },
     type: { type: String, enum: types_1.TrackTypeArray, required: true },
     name: { type: _mediaSchema_1.MediaNameSchema, required: true },
