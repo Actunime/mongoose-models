@@ -2,13 +2,10 @@ import { Model, Schema, model, models } from "mongoose";
 import {
   IUserAnimeListe,
   UserAnimeListStatusArray,
-  type IUser,
-  type IUserDisabled,
-  type IUserPremium,
+  type IUser
 } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
-import { DateSchema, withSchema } from "./_mediaModel";
-import { withImage } from "./_imageModel";
+import { DateSchema, MediaRelationSchema } from "./_mediaModel";
 
 const withUserAnimeListeSchema = new Schema<IUserAnimeListe>(
   {
@@ -22,110 +19,23 @@ const withUserAnimeListeSchema = new Schema<IUserAnimeListe>(
     startedDate: { type: DateSchema, default: undefined },
     completedDate: { type: DateSchema, default: undefined },
   },
-  { _id: false, timestamps: true, toJSON: { virtuals: true } },
+  { _id: false, timestamps: true },
 );
-
 
 const userSchema = new Schema<IUser>(
   {
-    id: {
-      type: String,
-      unique: true,
-      index: true,
-      default: () => genPublicID(),
-    },
+    id: { type: String, unique: true, default: () => genPublicID() },
     accountId: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     displayName: { type: String },
     description: { type: String },
     roles: { type: [String], default: ["MEMBER"] },
-    avatar: { type: withImage, default: undefined },
-    banner: { type: withImage, default: undefined },
+    avatar: { type: MediaRelationSchema, default: undefined },
+    banner: { type: MediaRelationSchema, default: undefined },
     preferences: { type: Schema.Types.Mixed, default: {} },
-    animes: { type: [withUserAnimeListeSchema], default: [] },
-    deletedAt: { type: Date, default: undefined, index: { expires: '1d' } },
+    animes: { type: [withUserAnimeListeSchema], default: [] }
   },
-  { timestamps: true, id: false, toJSON: { virtuals: true } },
+  { timestamps: true, id: false },
 );
 
-userSchema.virtual("avatar.data", {
-  ref: "Image",
-  localField: "avatar.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-userSchema.virtual("banner.data", {
-  ref: "Image",
-  localField: "banner.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-userSchema.virtual("disabled", {
-  ref: "UserDisabled",
-  localField: "id",
-  foreignField: "user.id",
-  justOne: true,
-});
-
-
-export const UserModel =
-  (models.User as Model<IUser>) || model("User", userSchema);
-
-
-const UserDisabledSchema = new Schema<IUserDisabled>(
-  {
-    id: {
-      type: String,
-      unique: true,
-      index: true,
-      default: () => genPublicID(),
-    },
-    reason: { type: String, required: true },
-    user: { type: withSchema, required: true },
-    by: { type: withSchema, required: true },
-  },
-  { timestamps: true, id: false, toJSON: { virtuals: true } },
-);
-
-UserDisabledSchema.virtual("by.data", {
-  ref: "User",
-  localField: "by.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-UserDisabledSchema.virtual("user.data", {
-  ref: "User",
-  localField: "user.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-export const UserDisabledModel =
-  models.UserDisabled || model("UserDisabled", UserDisabledSchema);
-
-/**
- *
- * User Premium
- *
- */
-
-const UserPremiumSchema = new Schema<IUserPremium>(
-  {
-    id: {
-      type: String,
-      unique: true,
-      index: true,
-      default: () => genPublicID(),
-    },
-    user: { type: withSchema, required: true },
-    level: { type: Number, required: true },
-    expires: { type: Date, expires: 60 * 60 * 24, required: true },
-  },
-  { timestamps: true, id: false, toJSON: { virtuals: true } },
-);
-
-export const UserPremiumModel =
-  models.UserPremium || model("UserPremium", UserPremiumSchema);
+export const UserModel = (models.User as Model<IUser>) || model("User", userSchema);

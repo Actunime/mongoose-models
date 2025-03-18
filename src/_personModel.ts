@@ -1,43 +1,29 @@
 import { IPerson, PersonRoleArray } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { DateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
-import { withImage } from "./_imageModel";
+import { DateSchema, MediaLinkSchema, MediaRelationSchema, MediaNameSchema } from "./_mediaModel";
 
 const PersonSchema = new Schema<IPerson>(
   {
-    id: { type: String, default: () => genPublicID(5) },
-    isVerified: { type: Boolean, default: false },
-    isPreAdded: { type: Boolean, default: false },
-    isGroupe: { type: Boolean, default: false },
-    name: MediaTitleSchema,
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    name: { type: MediaNameSchema, required: true },
     birthDate: { type: DateSchema, default: undefined },
     deathDate: { type: DateSchema, default: undefined },
-    description: String,
-    avatar: { type: withImage, default: undefined },
+    description: { type: String, default: undefined },
+    avatar: { type: MediaRelationSchema, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
+    isGroupe: { type: Boolean, default: undefined },
+    isVerified: { type: Boolean, default: false },
   },
-  { timestamps: true, id: false, toJSON: { virtuals: true } },
+  { timestamps: true, id: false },
 );
 
-// PersonSchema.virtual("name.full").get(function () {
-//   return `${this.name.first} ${this.name.last || ""}`.trim();
-// });
-
-PersonSchema.virtual("avatar.data", {
-  ref: "Image",
-  localField: "avatar.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-export const withPersonSchema = new Schema(
+export const PersonRelationSchema = new Schema(
   {
     id: { type: String, required: true },
     role: { type: String, enum: PersonRoleArray, default: undefined },
   },
-  { _id: false, toJSON: { virtuals: true } },
+  { _id: false },
 );
 
-export const PersonModel =
-  (models.Person as Model<IPerson>) || model("Person", PersonSchema, "persons");
+export const PersonModel = (models.Person as Model<IPerson>) || model("Person", PersonSchema, "persons");

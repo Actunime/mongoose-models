@@ -6,61 +6,31 @@ import {
 } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { withPersonSchema } from "./_personModel";
-import { withImage } from "./_imageModel";
-import { DateSchema, MediaTitleSchema } from "./_mediaModel";
+import { PersonRelationSchema } from "./_personModel";
+import { DateSchema, MediaRelationSchema, MediaNameSchema } from "./_mediaModel";
 
 const CharacterSchema = new Schema<ICharacter>(
   {
-    id: { type: String, default: () => genPublicID(5) },
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    name: MediaNameSchema,
+    age: { type: Number, default: undefined },
+    birthDate: { type: DateSchema, default: undefined },
+    gender: { type: String, enum: CharacterGenderArray, default: undefined },
+    species: { type: String, enum: CharacterSpeciesArray, default: undefined, },
+    description: { type: String, default: undefined },
+    avatar: { type: MediaRelationSchema, default: undefined },
+    actors: { type: [PersonRelationSchema], default: undefined },
     isVerified: { type: Boolean, default: false },
-    isPreAdded: { type: Boolean, default: false },
-    name: MediaTitleSchema,
-    age: Number,
-    birthDate: DateSchema,
-    gender: {
-      type: String,
-      enum: CharacterGenderArray,
-      required: true,
-    },
-    species: {
-      type: String,
-      enum: CharacterSpeciesArray,
-      required: true,
-    },
-    description: String,
-    avatar: { type: withImage, default: undefined },
-    actors: { type: [withPersonSchema], default: undefined },
   },
-  { timestamps: true, id: false, toJSON: { virtuals: true } },
+  { timestamps: true, id: false },
 );
 
-// CharacterSchema.virtual('name.full').get(function () {
-//   return `${this.name.default}`.trim();
-// });
-
-export const withCharacterSchema = new Schema(
+export const CharacterRelationSchema = new Schema(
   {
     id: { type: String, required: true },
-    role: { type: String, enum: CharacterRoleArray },
+    role: { type: String, enum: CharacterRoleArray, default: undefined },
   },
-  { _id: false, toJSON: { virtuals: true } },
+  { _id: false },
 );
 
-CharacterSchema.virtual("actors.data", {
-  ref: "Person",
-  localField: "actors.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-CharacterSchema.virtual("avatar.data", {
-  ref: "Image",
-  localField: "avatar.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-export const CharacterModel =
-  (models.Character as Model<ICharacter>) ||
-  model("Character", CharacterSchema);
+export const CharacterModel = (models.Character as Model<ICharacter>) || model("Character", CharacterSchema);

@@ -1,10 +1,7 @@
 import { ICharacter } from "@actunime/types";
 import { Model, Schema } from "mongoose";
-export declare const withCharacterSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
+export declare const CharacterRelationSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
-    toJSON: {
-        virtuals: true;
-    };
 }, {
     id: string;
     role?: string | null | undefined;
@@ -19,9 +16,9 @@ export declare const withCharacterSchema: Schema<any, Model<any, any, any, any, 
 } & {
     __v: number;
 }>;
-export declare const CharacterModel: Model<ICharacter, {}, {}, {}, import("mongoose").Document<unknown, {}, ICharacter> & ICharacter & Required<{
-    _id: Schema.Types.ObjectId;
-}> & {
+export declare const CharacterModel: Model<ICharacter, {}, {}, {}, import("mongoose").Document<unknown, {}, ICharacter> & import("@actunime/types/_characterType").ICharacterRoot & import("@actunime/types/_mediaType").IMedia & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
     __v: number;
 }, any>;
 //# sourceMappingURL=_characterModel.d.ts.map

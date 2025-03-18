@@ -1,29 +1,20 @@
 import { ICompany, CompanyTypeArray } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { DateSchema, MediaLinkSchema, MediaTitleSchema } from "./_mediaModel";
-import { withImage } from "./_imageModel";
+import { DateSchema, MediaLinkSchema, MediaRelationSchema, MediaNameSchema } from "./_mediaModel";
 
 const CompanySchema = new Schema<ICompany>(
   {
-    id: { type: String, default: () => genPublicID(5) },
-    isVerified: { type: Boolean, default: false },
-    isPreAdded: { type: Boolean, default: false },
-    name: MediaTitleSchema,
-    type: { type: String, enum: CompanyTypeArray, default: undefined },
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    type: { type: String, enum: CompanyTypeArray, required: true },
+    name: { type: MediaNameSchema, required: true },
+    description: { type: String, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
-    logo: { type: withImage, default: undefined },
+    logo: { type: MediaRelationSchema, default: undefined },
     createdDate: { type: DateSchema, default: undefined },
+    isVerified: { type: Boolean, default: false },
   },
   { timestamps: true, id: false },
 );
 
-export const withCompanySchema = new Schema(
-  {
-    id: { type: String },
-  },
-  { _id: false, toJSON: { virtuals: true } },
-);
-
-export const CompanyModel =
-  (models.Company as Model<ICompany>) || model("Company", CompanySchema);
+export const CompanyModel = (models.Company as Model<ICompany>) || model("Company", CompanySchema);

@@ -1,6 +1,15 @@
-import { IDate, IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
+import { IDate, IMediaDate, IMediaLink, IMediaRelation, IMediaTitle } from "@actunime/types";
 import { Schema } from "mongoose";
 export declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IMediaTitle, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IMediaTitle>> & import("mongoose").FlatRecord<IMediaTitle> & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}>;
+export declare const MediaNameSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;
@@ -27,22 +36,6 @@ export declare const MediaDateSchema: Schema<IMediaDate, import("mongoose").Mode
 } & {
     __v: number;
 }>;
-export declare const MediaImageSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    _id: false;
-}, {
-    cover?: string | null | undefined;
-    banner?: string | null | undefined;
-}, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
-    cover?: string | null | undefined;
-    banner?: string | null | undefined;
-}>> & import("mongoose").FlatRecord<{
-    cover?: string | null | undefined;
-    banner?: string | null | undefined;
-}> & {
-    _id: import("mongoose").Types.ObjectId;
-} & {
-    __v: number;
-}>;
 export declare const MediaLinkSchema: Schema<IMediaLink, import("mongoose").Model<IMediaLink, any, any, any, import("mongoose").Document<unknown, any, IMediaLink> & IMediaLink & {
     _id: import("mongoose").Types.ObjectId;
 } & {
@@ -52,18 +45,11 @@ export declare const MediaLinkSchema: Schema<IMediaLink, import("mongoose").Mode
 } & {
     __v: number;
 }>;
-export declare const withSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
-    _id: false;
-    toJSON: {
-        virtuals: true;
-    };
-}, {
-    id: string;
-}, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
-    id: string;
-}>> & import("mongoose").FlatRecord<{
-    id: string;
-}> & {
+export declare const MediaRelationSchema: Schema<IMediaRelation, import("mongoose").Model<IMediaRelation, any, any, any, import("mongoose").Document<unknown, any, IMediaRelation> & IMediaRelation & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, IMediaRelation, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<IMediaRelation>> & import("mongoose").FlatRecord<IMediaRelation> & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

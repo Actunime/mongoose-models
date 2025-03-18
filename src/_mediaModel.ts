@@ -1,56 +1,51 @@
-import { IDate, IMediaDate, IMediaLink, IMediaTitle } from "@actunime/types";
+import { IDate, IMediaDate, IMediaLink, IMediaRelation, IMediaTitle } from "@actunime/types";
 import { Schema } from "mongoose";
 
 export const MediaTitleSchema = new Schema<IMediaTitle>(
   {
-    default: {
-      type: String,
-      required: true,
-      // unique: true,
-      index: "text",
-      trim: true,
-    },
-    alias: { type: [String], trim: true, default: undefined },
+    default: { type: String, index: "text", trim: true, required: true },
+    alias: { type: [String], default: undefined },
   },
   { _id: false },
 );
 
+export const MediaNameSchema = MediaTitleSchema;
 
 export const DateSchema = new Schema<IDate>({
   year: {
     type: Number,
-    required: false, // L'année est facultative
-    min: 0 // Optionnel : éviter des valeurs négatives
+    min: 0, // Optionnel : éviter des valeurs négatives,
+    default: undefined
   },
   month: {
     type: Number,
-    required: false, // Le mois est facultatif
     min: 1,
-    max: 12
+    max: 12,
+    default: undefined
   },
   day: {
     type: Number,
-    required: false, // Le jour est facultatif
     min: 1,
-    max: 31
+    max: 31,
+    default: undefined
   },
   hours: {
     type: Number,
-    required: false, // Heure facultative
     min: 0,
-    max: 23
+    max: 23,
+    default: undefined
   },
   minutes: {
     type: Number,
-    required: false, // Minute facultative
     min: 0,
-    max: 59
+    max: 59,
+    default: undefined
   },
   seconds: {
     type: Number,
-    required: false, // Minute facultative
     min: 0,
-    max: 59
+    max: 59,
+    default: undefined
   }
 }, { _id: false });
 
@@ -58,14 +53,6 @@ export const MediaDateSchema = new Schema<IMediaDate>({
   start: { type: DateSchema, required: false },
   end: { type: DateSchema, required: false },
 }, { _id: false });
-
-export const MediaImageSchema = new Schema(
-  {
-    cover: { type: String },
-    banner: { type: String },
-  },
-  { _id: false },
-);
 
 export const MediaLinkSchema = new Schema<IMediaLink>(
   {
@@ -75,9 +62,9 @@ export const MediaLinkSchema = new Schema<IMediaLink>(
   { _id: false },
 );
 
-export const withSchema = new Schema(
+export const MediaRelationSchema = new Schema<IMediaRelation>(
   {
     id: { type: String, required: true },
   },
-  { _id: false, toJSON: { virtuals: true } },
+  { _id: false },
 );

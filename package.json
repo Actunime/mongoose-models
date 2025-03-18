@@ -47,7 +47,7 @@
     "typescript-eslint": "^8.24.1"
   },
   "dependencies": {
-    "@actunime/types": "^1.0.31",
+    "@actunime/types": "^1.0.36",
     "@actunime/utils": "^1.0.11",
     "dotenv": "^16.4.7",
     "mongoose": "^8.10.1"

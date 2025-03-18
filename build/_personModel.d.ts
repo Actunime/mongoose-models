@@ -1,10 +1,7 @@
 import { IPerson } from "@actunime/types";
 import { Model, Schema } from "mongoose";
-export declare const withPersonSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
+export declare const PersonRelationSchema: Schema<any, Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
-    toJSON: {
-        virtuals: true;
-    };
 }, {
     id: string;
     role?: string | null | undefined;
@@ -19,9 +16,9 @@ export declare const withPersonSchema: Schema<any, Model<any, any, any, any, any
 } & {
     __v: number;
 }>;
-export declare const PersonModel: Model<IPerson, {}, {}, {}, import("mongoose").Document<unknown, {}, IPerson> & IPerson & Required<{
-    _id: Schema.Types.ObjectId;
-}> & {
+export declare const PersonModel: Model<IPerson, {}, {}, {}, import("mongoose").Document<unknown, {}, IPerson> & import("@actunime/types/_personType").IPersonRoot & import("@actunime/types/_mediaType").IMedia & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
     __v: number;
 }, any>;
 //# sourceMappingURL=_personModel.d.ts.map

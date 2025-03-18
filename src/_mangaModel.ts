@@ -2,22 +2,19 @@ import {
   IManga,
   IMangaChapterVolums,
   MangaFormatArray,
-  MediaParentLabelArray,
   MediaSourceArray,
   MediaStatusArray,
 } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
-import { withCharacterSchema } from "./_characterModel";
-import { withCompanySchema } from "./_companyModel";
-import { withGroupeSchema } from "./_groupeModel";
 import {
   MediaDateSchema,
   MediaLinkSchema,
+  MediaRelationSchema,
   MediaTitleSchema,
 } from "./_mediaModel";
-import { withPersonSchema } from "./_personModel";
-import { withImage } from "./_imageModel";
+import { PersonRelationSchema } from "./_personModel";
+import { CharacterRelationSchema } from "./_characterModel";
 
 const MangaChapterVolumesSchema = new Schema<IMangaChapterVolums>({
   airing: { type: Number, default: undefined },
@@ -25,109 +22,41 @@ const MangaChapterVolumesSchema = new Schema<IMangaChapterVolums>({
   total: { type: Number, default: undefined },
 });
 
-export const withMangaSchema = new Schema(
+export const MangaRelationSchema = new Schema(
   {
-    id: { type: String },
-    sourceLabel: {
-      type: String,
-      enum: MediaSourceArray,
-      default: undefined,
-    },
-    parentLabel: {
-      type: String,
-      enum: MediaParentLabelArray,
-      default: undefined,
-    },
+    id: { type: String, required: true },
+    label: { type: String, default: undefined },
   },
-  { _id: false, toJSON: { virtuals: true } },
+  { _id: false },
 );
-
 
 const MangaSchema = new Schema<IManga>(
   {
-    id: { type: String, default: () => genPublicID(5) },
-    isVerified: { type: Boolean, default: false },
-    isPreAdded: { type: Boolean, default: false },
-
-    groupe: { type: withGroupeSchema, required: true },
-    parent: { type: withMangaSchema, default: undefined },
-
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    groupe: { type: MediaRelationSchema, required: true },
+    parent: { type: MangaRelationSchema, default: undefined },
     title: { type: MediaTitleSchema, required: true },
     date: { type: MediaDateSchema, default: undefined },
-    cover: { type: [withImage], default: undefined },
-    banner: { type: [withImage], default: undefined },
     synopsis: { type: String, default: undefined },
-    source: { type: withMangaSchema, default: undefined },
-    format: {
-      type: String,
-      enum: MangaFormatArray,
-      default: undefined,
-    },
+    source: { type: String, enum: MediaSourceArray, default: undefined },
+    format: { type: String, enum: MangaFormatArray, default: undefined },
     vf: { type: Boolean, default: undefined },
     genres: { type: [String], default: undefined },
-    themes: { type: [String], default: undefined },
-    status: { type: String, enum: MediaStatusArray },
+    status: { type: String, enum: MediaStatusArray, default: undefined },
     chapters: { type: MangaChapterVolumesSchema, default: undefined },
     volumes: { type: MangaChapterVolumesSchema, default: undefined },
     adult: { type: Boolean, default: undefined },
     explicit: { type: Boolean, default: undefined },
     links: { type: [MediaLinkSchema], default: undefined },
-
-    companys: { type: [withCompanySchema], default: undefined },
-    staffs: { type: [withPersonSchema], default: undefined },
-    characters: { type: [withCharacterSchema], default: undefined },
+    cover: { type: [MediaRelationSchema], default: undefined },
+    banner: { type: [MediaRelationSchema], default: undefined },
+    companys: { type: [MediaRelationSchema], default: undefined },
+    staffs: { type: [PersonRelationSchema], default: undefined },
+    characters: { type: [CharacterRelationSchema], default: undefined },
+    isVerified: { type: Boolean, default: false },
   },
   { timestamps: true, id: false },
 );
 
-MangaSchema.virtual("groupe.data", {
-  ref: "Groupe",
-  localField: "groupe.id",
-  foreignField: "id",
-  justOne: true,
-});
 
-MangaSchema.virtual("parent.data", {
-  ref: "Manga",
-  localField: "parent.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-MangaSchema.virtual("source.data", {
-  ref: "Manga",
-  localField: "source.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-MangaSchema.virtual("companys.data", {
-  ref: "Company",
-  localField: "companys.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-MangaSchema.virtual("staffs.data", {
-  ref: "Person",
-  localField: "staffs.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-MangaSchema.virtual("characters.data", {
-  ref: "Character",
-  localField: "characters.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-MangaSchema.virtual("tracks.data", {
-  ref: "Track",
-  localField: "tracks.id",
-  foreignField: "id",
-  justOne: true,
-});
-
-export const MangaModel =
-  (models.Manga as Model<IManga>) || model("Manga", MangaSchema);
+export const MangaModel = (models.Manga as Model<IManga>) || model("Manga", MangaSchema);

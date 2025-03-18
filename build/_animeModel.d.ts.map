@@ -1,1 +1,1 @@
-{"version":3,"file":"_animeModel.d.ts","sourceRoot":"","sources":["../src/_animeModel.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,MAAM,EAMP,MAAM,iBAAiB,CAAC;AAEzB,OAAO,EAAE,KAAK,EAAE,MAAM,EAAiB,MAAM,UAAU,CAAC;AAyOxD,eAAO,MAAM,UAAU;;;;OACiD,CAAC"}
+{"version":3,"file":"_animeModel.d.ts","sourceRoot":"","sources":["../src/_animeModel.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,MAAM,EAMP,MAAM,iBAAiB,CAAC;AAEzB,OAAO,EAAE,KAAK,EAAyB,MAAM,UAAU,CAAC;AA4DxD,eAAO,MAAM,UAAU;;;;OAAyE,CAAC"}
