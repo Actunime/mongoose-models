@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/Actunime/mongoose-models/compare/v1.0.24...v1.0.25) (2025-03-18)
+
+
+### Bug Fixes
+
+* **track:** pubDate => releaseDate ([a9c530a](https://github.com/Actunime/mongoose-models/commit/a9c530a2ac9c52565e20ac6ac57b92a8ab3edb8c))
+
 ## [1.0.24](https://github.com/Actunime/mongoose-models/compare/v1.0.23...v1.0.24) (2025-03-18)
 
 
