@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/Actunime/mongoose-models/compare/v1.0.28...v1.0.29) (2025-03-18)
+
+
+### Bug Fixes
+
+* **v2:** up ([85cd7bc](https://github.com/Actunime/mongoose-models/commit/85cd7bcf062521071dbdc1435217886a6ec9c6aa))
+
 ## [1.0.28](https://github.com/Actunime/mongoose-models/compare/v1.0.27...v1.0.28) (2025-03-18)
 
 
