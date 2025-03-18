@@ -5,6 +5,8 @@ import {
   MediaSourceArray,
   MediaStatusArray,
   MediaGenresArray,
+  IAnimeDB,
+  IAnimeRoot,
 } from "@actunime/types";
 import { genPublicID } from "@actunime/utils";
 import { Model, Schema, model, models } from "mongoose";
@@ -67,4 +69,5 @@ const AnimeSchema = new Schema<IAnime>(
   { timestamps: true, id: false },
 );
 
-export const AnimeModel = (models.Anime as Model<IAnime>) || model<IAnime>("Anime", AnimeSchema);
+const animeModel = model("Anime", AnimeSchema);
+export const AnimeModel = models.Anime as typeof animeModel || animeModel;

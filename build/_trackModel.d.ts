@@ -5,4 +5,3 @@ export declare const TrackModel: Model<ITrack, {}, {}, {}, import("mongoose").Do
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_trackModel.d.ts.map

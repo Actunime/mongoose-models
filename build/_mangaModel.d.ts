@@ -21,4 +21,3 @@ export declare const MangaModel: Model<IManga, {}, {}, {}, import("mongoose").Do
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_mangaModel.d.ts.map

@@ -7,4 +7,3 @@ export declare const ActivityModel: Model<IActivity, {}, {}, {}, import("mongoos
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_activityModel.d.ts.map

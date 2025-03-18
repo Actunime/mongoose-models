@@ -7,4 +7,3 @@ export declare const UserModel: Model<IUser, {}, {}, {}, import("mongoose").Docu
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_userModel.d.ts.map

@@ -5,4 +5,3 @@ export declare const CompanyModel: Model<ICompany, {}, {}, {}, import("mongoose"
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_companyModel.d.ts.map

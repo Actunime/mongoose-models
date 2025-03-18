@@ -1,7 +1,9 @@
 {
     "extends": "@actunime/typescript-config/config/base",
     "compilerOptions": {
-        "outDir": "build"
+        "outDir": "build",
+        "declarationMap": false,
+        "sourceMap": false
     },
     "include": [
         "./src/**/*",

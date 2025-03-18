@@ -7,4 +7,3 @@ export declare const ReportModel: Model<IReport, {}, {}, {}, import("mongoose").
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_reportModel.d.ts.map

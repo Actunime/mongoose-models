@@ -21,4 +21,3 @@ export declare const CharacterModel: Model<ICharacter, {}, {}, {}, import("mongo
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_characterModel.d.ts.map

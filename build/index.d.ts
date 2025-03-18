@@ -11,4 +11,3 @@ export * from './_personModel';
 export * from './_reportModel';
 export * from './_trackModel';
 export * from './_userModel';
-//# sourceMappingURL=index.d.ts.map

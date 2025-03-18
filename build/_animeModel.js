@@ -44,4 +44,5 @@ const AnimeSchema = new mongoose_1.Schema({
     tracks: { type: [_mediaModel_1.MediaRelationSchema], default: undefined },
     isVerified: { type: Boolean, default: false },
 }, { timestamps: true, id: false });
-exports.AnimeModel = mongoose_1.models.Anime || (0, mongoose_1.model)("Anime", AnimeSchema);
+const animeModel = (0, mongoose_1.model)("Anime", AnimeSchema);
+exports.AnimeModel = mongoose_1.models.Anime || animeModel;

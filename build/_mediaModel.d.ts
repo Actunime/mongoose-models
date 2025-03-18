@@ -54,4 +54,3 @@ export declare const MediaRelationSchema: Schema<IMediaRelation, import("mongoos
 } & {
     __v: number;
 }>;
-//# sourceMappingURL=_mediaModel.d.ts.map

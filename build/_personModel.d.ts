@@ -21,4 +21,3 @@ export declare const PersonModel: Model<IPerson, {}, {}, {}, import("mongoose").
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_personModel.d.ts.map

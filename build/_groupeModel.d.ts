@@ -5,4 +5,3 @@ export declare const GroupeModel: Model<IGroupe, {}, {}, {}, import("mongoose").
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_groupeModel.d.ts.map

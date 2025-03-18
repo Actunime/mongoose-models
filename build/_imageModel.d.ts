@@ -5,4 +5,3 @@ export declare const ImageModel: Model<IImage, {}, {}, {}, import("mongoose").Do
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_imageModel.d.ts.map

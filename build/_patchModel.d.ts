@@ -7,4 +7,3 @@ export declare const PatchModel: Model<IPatch, {}, {}, {}, import("mongoose").Do
 } & {
     __v: number;
 }, any>;
-//# sourceMappingURL=_patchModel.d.ts.map
