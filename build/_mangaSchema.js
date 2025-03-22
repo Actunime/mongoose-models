@@ -26,6 +26,7 @@ exports.MangaSchema = new mongoose_1.Schema({
     source: { type: String, enum: types_1.MediaSourceArray, default: undefined },
     format: { type: String, enum: types_1.MangaFormatArray, default: undefined },
     vf: { type: Boolean, default: undefined },
+    trailer: { type: String, default: undefined },
     genres: { type: [String], default: undefined },
     status: { type: String, enum: types_1.MediaStatusArray, default: undefined },
     chapters: { type: MangaChapterVolumesSchema, default: undefined },
