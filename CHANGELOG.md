@@ -1,3 +1,10 @@
+## [1.0.33](https://github.com/Actunime/mongoose-models/compare/v1.0.32...v1.0.33) (2025-03-22)
+
+
+### Bug Fixes
+
+* add trailer to manga ([a8cc419](https://github.com/Actunime/mongoose-models/commit/a8cc4190efc0381b0f17b647f541226a19a4b335))
+
 ## [1.0.32](https://github.com/Actunime/mongoose-models/compare/v1.0.31...v1.0.32) (2025-03-22)
 
 
