@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 import { type IUser } from "@actunime/types";
-export declare const userSchema: Schema<IUser, import("mongoose").Model<IUser, any, any, any, import("mongoose").Document<unknown, any, IUser> & import("@actunime/types/_userType").IUserRoot & {
+export declare const userSchema: Schema<IUser, import("mongoose").Model<IUser, any, any, any, import("mongoose").Document<unknown, any, IUser> & import("@actunime/types").IUserRoot & {
     id: string;
 } & {
     _id: import("mongoose").Types.ObjectId;

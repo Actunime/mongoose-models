@@ -1,24 +1,21 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CharacterRelationSchema = exports.CharacterSchema = void 0;
-const types_1 = require("@actunime/types");
-const utils_1 = require("@actunime/utils");
-const mongoose_1 = require("mongoose");
-const _personSchema_1 = require("./_personSchema");
-const _mediaSchema_1 = require("./_mediaSchema");
-exports.CharacterSchema = new mongoose_1.Schema({
-    id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(5) },
-    name: _mediaSchema_1.MediaNameSchema,
+import { CharacterGenderArray, CharacterRoleArray, CharacterSpeciesArray, } from "@actunime/types";
+import { genPublicID } from "@actunime/utils";
+import { Schema } from "mongoose";
+import { PersonRelationSchema } from "./_personSchema";
+import { DateSchema, MediaRelationSchema, MediaNameSchema } from "./_mediaSchema";
+export const CharacterSchema = new Schema({
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    name: MediaNameSchema,
     age: { type: Number, default: undefined },
-    birthDate: { type: _mediaSchema_1.DateSchema, default: undefined },
-    gender: { type: String, enum: types_1.CharacterGenderArray, default: undefined },
-    species: { type: String, enum: types_1.CharacterSpeciesArray, default: undefined, },
+    birthDate: { type: DateSchema, default: undefined },
+    gender: { type: String, enum: CharacterGenderArray, default: undefined },
+    species: { type: String, enum: CharacterSpeciesArray, default: undefined, },
     description: { type: String, default: undefined },
-    avatar: { type: _mediaSchema_1.MediaRelationSchema, default: undefined },
-    actors: { type: [_personSchema_1.PersonRelationSchema], default: undefined },
+    avatar: { type: MediaRelationSchema, default: undefined },
+    actors: { type: [PersonRelationSchema], default: undefined },
     isVerified: { type: Boolean, default: false },
 }, { timestamps: true, id: false });
-exports.CharacterRelationSchema = new mongoose_1.Schema({
+export const CharacterRelationSchema = new Schema({
     id: { type: String, required: true },
-    role: { type: String, enum: types_1.CharacterRoleArray, default: undefined },
+    role: { type: String, enum: CharacterRoleArray, default: undefined },
 }, { _id: false });

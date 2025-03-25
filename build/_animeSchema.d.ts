@@ -1,6 +1,6 @@
 import { IAnime } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const AnimeSchema: Schema<IAnime, import("mongoose").Model<IAnime, any, any, any, import("mongoose").Document<unknown, any, IAnime> & import("@actunime/types/_animeType").IAnimeRoot & import("@actunime/types/_mediaType").IMedia & {
+export declare const AnimeSchema: Schema<IAnime, import("mongoose").Model<IAnime, any, any, any, import("mongoose").Document<unknown, any, IAnime> & import("@actunime/types").IAnimeRoot & import("@actunime/types").IMedia & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

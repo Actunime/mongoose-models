@@ -1,14 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImageSchema = void 0;
-const mongoose_1 = require("mongoose");
-const types_1 = require("@actunime/types");
-const utils_1 = require("@actunime/utils");
-const _mediaSchema_1 = require("./_mediaSchema");
-exports.ImageSchema = new mongoose_1.Schema({
-    id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(5) },
-    label: { type: String, enum: types_1.ImageLabelArray, required: true },
-    target: { type: _mediaSchema_1.MediaRelationSchema, required: true },
-    targetPath: { type: String, enum: types_1.TargetPathArray, required: true },
+import { Schema } from "mongoose";
+import { ImageLabelArray, TargetPathArray } from "@actunime/types";
+import { genPublicID } from "@actunime/utils";
+import { MediaRelationSchema } from "./_mediaSchema";
+export const ImageSchema = new Schema({
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    label: { type: String, enum: ImageLabelArray, required: true },
+    target: { type: MediaRelationSchema, required: true },
+    targetPath: { type: String, enum: TargetPathArray, required: true },
     isVerified: { type: Boolean, default: false },
 }, { timestamps: true, id: false });

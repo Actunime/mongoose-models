@@ -1,6 +1,6 @@
 import { IReport } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const ReportSchema: Schema<IReport, import("mongoose").Model<IReport, any, any, any, import("mongoose").Document<unknown, any, IReport> & import("@actunime/types/_reportType").IReportRoot<"User" | "Groupe" | "Manga" | "Anime" | "Person" | "Character" | "Track" | "Company" | "Image" | "Patch" | "Activity" | "Report"> & {
+export declare const ReportSchema: Schema<IReport, import("mongoose").Model<IReport, any, any, any, import("mongoose").Document<unknown, any, IReport> & import("@actunime/types").IReportRoot<"User" | "Groupe" | "Manga" | "Anime" | "Person" | "Character" | "Track" | "Company" | "Image" | "Patch" | "Activity" | "Report"> & {
     id: string;
 } & {
     _id: import("mongoose").Types.ObjectId;

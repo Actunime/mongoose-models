@@ -1,14 +1,41 @@
 {
-    "extends": "@actunime/typescript-config/config/base",
     "compilerOptions": {
-        "outDir": "build",
-        "declarationMap": false,
-        "sourceMap": false
+        "resolveJsonModule": true,
+        "allowJs": false,
+        "removeComments": true,
+        "isolatedModules": true,
+        "declaration": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "ES2022",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "target": "ES2022",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "preserveConstEnums": true,
+        "incremental": true
     },
     "include": [
-        "./src/**/*",
+        "src"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "./node_modules",
+        "./node_modules/*",
+        "./node_modules/@types/node/index.d.ts",
+        "coverage"
     ]
 }

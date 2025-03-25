@@ -1,19 +1,16 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActivitySchema = void 0;
-const types_1 = require("@actunime/types");
-const utils_1 = require("@actunime/utils");
-const mongoose_1 = require("mongoose");
-const _mediaSchema_1 = require("./_mediaSchema");
-const ActivityTargetSchema = new mongoose_1.Schema({
+import { ActivityActionArray, TargetPathArray, ActivityTypeArray, } from "@actunime/types";
+import { genPublicID } from "@actunime/utils";
+import { Schema } from "mongoose";
+import { MediaRelationSchema } from "./_mediaSchema";
+const ActivityTargetSchema = new Schema({
     id: { type: String, required: true },
-    path: { type: String, enum: types_1.TargetPathArray, required: true },
+    path: { type: String, enum: TargetPathArray, required: true },
 }, { _id: false });
-exports.ActivitySchema = new mongoose_1.Schema({
-    id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(8) },
-    type: { type: String, enum: types_1.ActivityTypeArray, required: true },
-    action: { type: String, enum: types_1.ActivityActionArray, required: true },
+export const ActivitySchema = new Schema({
+    id: { type: String, unique: true, default: () => genPublicID(8) },
+    type: { type: String, enum: ActivityTypeArray, required: true },
+    action: { type: String, enum: ActivityActionArray, required: true },
     targets: { type: [ActivityTargetSchema], required: true, default: undefined },
-    author: { type: _mediaSchema_1.MediaRelationSchema, default: undefined },
+    author: { type: MediaRelationSchema, default: undefined },
     params: { type: Object, default: undefined },
 }, { timestamps: true, id: false });

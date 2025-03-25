@@ -1,17 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CompanySchema = void 0;
-const types_1 = require("@actunime/types");
-const utils_1 = require("@actunime/utils");
-const mongoose_1 = require("mongoose");
-const _mediaSchema_1 = require("./_mediaSchema");
-exports.CompanySchema = new mongoose_1.Schema({
-    id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(5) },
-    type: { type: String, enum: types_1.CompanyTypeArray, required: true },
-    name: { type: _mediaSchema_1.MediaNameSchema, required: true },
+import { CompanyTypeArray } from "@actunime/types";
+import { genPublicID } from "@actunime/utils";
+import { Schema } from "mongoose";
+import { DateSchema, MediaLinkSchema, MediaRelationSchema, MediaNameSchema } from "./_mediaSchema";
+export const CompanySchema = new Schema({
+    id: { type: String, unique: true, default: () => genPublicID(5) },
+    type: { type: String, enum: CompanyTypeArray, required: true },
+    name: { type: MediaNameSchema, required: true },
     description: { type: String, default: undefined },
-    links: { type: [_mediaSchema_1.MediaLinkSchema], default: undefined },
-    logo: { type: _mediaSchema_1.MediaRelationSchema, default: undefined },
-    createdDate: { type: _mediaSchema_1.DateSchema, default: undefined },
+    links: { type: [MediaLinkSchema], default: undefined },
+    logo: { type: MediaRelationSchema, default: undefined },
+    createdDate: { type: DateSchema, default: undefined },
     isVerified: { type: Boolean, default: false },
 }, { timestamps: true, id: false });

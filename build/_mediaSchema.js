@@ -1,16 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaRelationSchema = exports.MediaLinkSchema = exports.MediaDateSchema = exports.DateSchema = exports.MediaNameSchema = exports.MediaTitleSchema = void 0;
-const mongoose_1 = require("mongoose");
-exports.MediaTitleSchema = new mongoose_1.Schema({
+import { Schema } from "mongoose";
+export const MediaTitleSchema = new Schema({
     default: { type: String, index: "text", trim: true, required: true },
     alias: { type: [String], default: undefined },
 }, { _id: false });
-exports.MediaNameSchema = exports.MediaTitleSchema;
-exports.DateSchema = new mongoose_1.Schema({
+export const MediaNameSchema = MediaTitleSchema;
+export const DateSchema = new Schema({
     year: {
         type: Number,
-        min: 0, // Optionnel : éviter des valeurs négatives,
+        min: 0,
         default: undefined
     },
     month: {
@@ -44,14 +41,14 @@ exports.DateSchema = new mongoose_1.Schema({
         default: undefined
     }
 }, { _id: false });
-exports.MediaDateSchema = new mongoose_1.Schema({
-    start: { type: exports.DateSchema, required: false },
-    end: { type: exports.DateSchema, required: false },
+export const MediaDateSchema = new Schema({
+    start: { type: DateSchema, required: false },
+    end: { type: DateSchema, required: false },
 }, { _id: false });
-exports.MediaLinkSchema = new mongoose_1.Schema({
+export const MediaLinkSchema = new Schema({
     name: { type: String, required: true, trim: true },
     value: { type: String, required: true, trim: true },
 }, { _id: false });
-exports.MediaRelationSchema = new mongoose_1.Schema({
+export const MediaRelationSchema = new Schema({
     id: { type: String, required: true },
 }, { _id: false });

@@ -1,6 +1,6 @@
 import { IPatch } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const PatchSchema: Schema<IPatch, import("mongoose").Model<IPatch, any, any, any, import("mongoose").Document<unknown, any, IPatch> & import("@actunime/types/_patchType").IPatchRoot<"User" | "Groupe" | "Manga" | "Anime" | "Person" | "Character" | "Track" | "Company" | "Image" | "Patch" | "Activity" | "Report"> & {
+export declare const PatchSchema: Schema<IPatch, import("mongoose").Model<IPatch, any, any, any, import("mongoose").Document<unknown, any, IPatch> & import("@actunime/types").IPatchRoot<"User" | "Groupe" | "Manga" | "Anime" | "Person" | "Character" | "Track" | "Company" | "Image" | "Patch" | "Activity" | "Report"> & {
     id: string;
 } & {
     _id: import("mongoose").Types.ObjectId;

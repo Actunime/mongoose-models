@@ -1,16 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReportSchema = void 0;
-const types_1 = require("@actunime/types");
-const utils_1 = require("@actunime/utils");
-const mongoose_1 = require("mongoose");
-const _mediaSchema_1 = require("./_mediaSchema");
-exports.ReportSchema = new mongoose_1.Schema({
-    id: { type: String, unique: true, default: () => (0, utils_1.genPublicID)(8) },
-    status: { type: String, enum: types_1.ReportStatusArray, default: "PENDING" },
-    target: { type: _mediaSchema_1.MediaRelationSchema, required: true },
-    targetPath: { type: String, enum: types_1.TargetPathArray, required: true },
-    subject: { type: String, enum: types_1.ReportSubjectArray, required: true },
+import { TargetPathArray, ReportStatusArray, ReportSubjectArray, } from "@actunime/types";
+import { genPublicID } from "@actunime/utils";
+import { Schema } from "mongoose";
+import { MediaRelationSchema } from "./_mediaSchema";
+export const ReportSchema = new Schema({
+    id: { type: String, unique: true, default: () => genPublicID(8) },
+    status: { type: String, enum: ReportStatusArray, default: "PENDING" },
+    target: { type: MediaRelationSchema, required: true },
+    targetPath: { type: String, enum: TargetPathArray, required: true },
+    subject: { type: String, enum: ReportSubjectArray, required: true },
     message: { type: String, required: true },
-    author: { type: _mediaSchema_1.MediaRelationSchema, required: true },
+    author: { type: MediaRelationSchema, required: true },
 }, { timestamps: true, id: false });

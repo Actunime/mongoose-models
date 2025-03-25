@@ -1,6 +1,6 @@
 import { IPerson } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const PersonSchema: Schema<IPerson, import("mongoose").Model<IPerson, any, any, any, import("mongoose").Document<unknown, any, IPerson> & import("@actunime/types/_personType").IPersonRoot & import("@actunime/types/_mediaType").IMedia & {
+export declare const PersonSchema: Schema<IPerson, import("mongoose").Model<IPerson, any, any, any, import("mongoose").Document<unknown, any, IPerson> & import("@actunime/types").IPersonRoot & import("@actunime/types").IMedia & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

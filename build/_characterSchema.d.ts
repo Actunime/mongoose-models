@@ -1,6 +1,6 @@
 import { ICharacter } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const CharacterSchema: Schema<ICharacter, import("mongoose").Model<ICharacter, any, any, any, import("mongoose").Document<unknown, any, ICharacter> & import("@actunime/types/_characterType").ICharacterRoot & import("@actunime/types/_mediaType").IMedia & {
+export declare const CharacterSchema: Schema<ICharacter, import("mongoose").Model<ICharacter, any, any, any, import("mongoose").Document<unknown, any, ICharacter> & import("@actunime/types").ICharacterRoot & import("@actunime/types").IMedia & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

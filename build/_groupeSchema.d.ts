@@ -1,6 +1,6 @@
 import { IGroupe } from "@actunime/types";
 import { Schema } from "mongoose";
-export declare const GroupeSchema: Schema<IGroupe, import("mongoose").Model<IGroupe, any, any, any, import("mongoose").Document<unknown, any, IGroupe> & import("@actunime/types/_groupeType").IGroupeRoot & import("@actunime/types/_mediaType").IMedia & {
+export declare const GroupeSchema: Schema<IGroupe, import("mongoose").Model<IGroupe, any, any, any, import("mongoose").Document<unknown, any, IGroupe> & import("@actunime/types").IGroupeRoot & import("@actunime/types").IMedia & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

@@ -16,7 +16,7 @@ export declare const MangaRelationSchema: Schema<any, import("mongoose").Model<a
 } & {
     __v: number;
 }>;
-export declare const MangaSchema: Schema<IManga, import("mongoose").Model<IManga, any, any, any, import("mongoose").Document<unknown, any, IManga> & import("@actunime/types/_mangaType").IMangaRoot & import("@actunime/types/_mediaType").IMedia & {
+export declare const MangaSchema: Schema<IManga, import("mongoose").Model<IManga, any, any, any, import("mongoose").Document<unknown, any, IManga> & import("@actunime/types").IMangaRoot & import("@actunime/types").IMedia & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;
