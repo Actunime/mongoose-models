@@ -1,3 +1,11 @@
+## [1.0.35](https://github.com/Actunime/mongoose-models/compare/v1.0.34...v1.0.35) (2025-03-29)
+
+
+### Bug Fixes
+
+* add user permissions ([9c303ff](https://github.com/Actunime/mongoose-models/commit/9c303ff374e51d0ff17be230b7da14fe8f8911eb))
+* lock pnpm ([fcbd57d](https://github.com/Actunime/mongoose-models/commit/fcbd57d15efa5f760dcfc73e220cefe8c74540f6))
+
 ## [1.0.34](https://github.com/Actunime/mongoose-models/compare/v1.0.33...v1.0.34) (2025-03-25)
 
 
