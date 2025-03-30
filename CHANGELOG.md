@@ -1,3 +1,10 @@
+## [1.0.37](https://github.com/Actunime/mongoose-models/compare/v1.0.36...v1.0.37) (2025-03-30)
+
+
+### Bug Fixes
+
+* set image target optionnal ([c9dd88b](https://github.com/Actunime/mongoose-models/commit/c9dd88bffaeda1957872d87e24706d64d5b061e3))
+
 ## [1.0.36](https://github.com/Actunime/mongoose-models/compare/v1.0.35...v1.0.36) (2025-03-30)
 
 
