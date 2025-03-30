@@ -1,14 +1,14 @@
-import { MangaFormatArray, MediaSourceArray, MediaStatusArray, } from "@actunime/types";
-import { genPublicID } from "@actunime/utils";
-import { Schema } from "mongoose";
-import { MediaDateSchema, MediaLinkSchema, MediaRelationSchema, MediaTitleSchema, } from "./_mediaSchema";
-import { PersonRelationSchema } from "./_personSchema";
-import { CharacterRelationSchema } from "./_characterSchema";
+import { MangaFormatArray, MediaSourceArray, MediaStatusArray, } from '@actunime/types';
+import { genPublicID } from '@actunime/utils';
+import { Schema } from 'mongoose';
+import { MediaDateSchema, MediaLinkSchema, MediaRelationSchema, MediaTitleSchema, } from './_mediaSchema';
+import { PersonRelationSchema } from './_personSchema';
+import { CharacterRelationSchema } from './_characterSchema';
 const MangaChapterVolumesSchema = new Schema({
     airing: { type: Number, default: undefined },
     nextAiringDate: { type: MediaDateSchema, default: undefined },
     total: { type: Number, default: undefined },
-});
+}, { _id: false });
 export const MangaRelationSchema = new Schema({
     id: { type: String, required: true },
     label: { type: String, default: undefined },

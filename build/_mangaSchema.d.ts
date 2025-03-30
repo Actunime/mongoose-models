@@ -1,5 +1,5 @@
-import { IManga } from "@actunime/types";
-import { Schema } from "mongoose";
+import { IManga } from '@actunime/types';
+import { Schema } from 'mongoose';
 export declare const MangaRelationSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
     _id: false;
 }, {
