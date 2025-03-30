@@ -1,3 +1,11 @@
+## [1.0.36](https://github.com/Actunime/mongoose-models/compare/v1.0.35...v1.0.36) (2025-03-30)
+
+
+### Bug Fixes
+
+* remove _id from chapter & volume schema ([797ad69](https://github.com/Actunime/mongoose-models/commit/797ad69f4a4c17ec3686b1c6bf35a72e0586b6c6))
+* up types to date ([235c6f8](https://github.com/Actunime/mongoose-models/commit/235c6f8ee806a7ff748a614f3b1f945707442225))
+
 ## [1.0.35](https://github.com/Actunime/mongoose-models/compare/v1.0.34...v1.0.35) (2025-03-29)
 
 
