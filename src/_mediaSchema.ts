@@ -9,7 +9,7 @@ import { Schema } from 'mongoose';
 
 const MediaTitleSchema = new Schema<IMediaTitle>(
   {
-    default: { type: String, trim: true, required: true },
+    original: { type: String, trim: true, required: true },
     normal: { type: String, trim: true, required: true },
     alias: { type: [String], default: undefined },
   },

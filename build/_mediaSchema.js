@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 const MediaTitleSchema = new Schema({
-    default: { type: String, trim: true, required: true },
+    original: { type: String, trim: true, required: true },
     normal: { type: String, trim: true, required: true },
     alias: { type: [String], default: undefined },
 }, { _id: false });
