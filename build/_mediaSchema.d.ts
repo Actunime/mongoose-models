@@ -1,6 +1,6 @@
-import { IDate, IMediaDate, IMediaLink, IMediaRelation, IMediaTitle } from "@actunime/types";
-import { Schema } from "mongoose";
-export declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
+import { IDate, IMediaDate, IMediaLink, IMediaRelation, IMediaTitle } from '@actunime/types';
+import { Schema } from 'mongoose';
+declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;
@@ -9,6 +9,7 @@ export declare const MediaTitleSchema: Schema<IMediaTitle, import("mongoose").Mo
 } & {
     __v: number;
 }>;
+export { MediaTitleSchema };
 export declare const MediaNameSchema: Schema<IMediaTitle, import("mongoose").Model<IMediaTitle, any, any, any, import("mongoose").Document<unknown, any, IMediaTitle> & IMediaTitle & {
     _id: import("mongoose").Types.ObjectId;
 } & {

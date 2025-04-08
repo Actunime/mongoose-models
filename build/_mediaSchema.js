@@ -1,45 +1,48 @@
-import { Schema } from "mongoose";
-export const MediaTitleSchema = new Schema({
-    default: { type: String, index: "text", trim: true, required: true },
+import { Schema } from 'mongoose';
+const MediaTitleSchema = new Schema({
+    default: { type: String, trim: true, required: true },
+    normal: { type: String, trim: true, required: true },
     alias: { type: [String], default: undefined },
 }, { _id: false });
+MediaTitleSchema.index({ default: 'text', normal: 'text', alias: 'text' }, { weights: { normal: 3, default: 2, alias: 1 } });
+export { MediaTitleSchema };
 export const MediaNameSchema = MediaTitleSchema;
 export const DateSchema = new Schema({
     year: {
         type: Number,
         min: 0,
-        default: undefined
+        default: undefined,
     },
     month: {
         type: Number,
         min: 1,
         max: 12,
-        default: undefined
+        default: undefined,
     },
     day: {
         type: Number,
         min: 1,
         max: 31,
-        default: undefined
+        default: undefined,
     },
     hours: {
         type: Number,
         min: 0,
         max: 23,
-        default: undefined
+        default: undefined,
     },
     minutes: {
         type: Number,
         min: 0,
         max: 59,
-        default: undefined
+        default: undefined,
     },
     seconds: {
         type: Number,
         min: 0,
         max: 59,
-        default: undefined
-    }
+        default: undefined,
+    },
 }, { _id: false });
 export const MediaDateSchema = new Schema({
     start: { type: DateSchema, required: false },
