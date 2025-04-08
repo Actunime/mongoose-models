@@ -1,3 +1,11 @@
+## [1.0.38](https://github.com/Actunime/mongoose-models/compare/v1.0.37...v1.0.38) (2025-04-08)
+
+
+### Bug Fixes
+
+* @actunime/types version ([fa8a235](https://github.com/Actunime/mongoose-models/commit/fa8a23595150b92c9111451f63ad4f5e1e036fa5))
+* name & title better text index ([8654ead](https://github.com/Actunime/mongoose-models/commit/8654eade503a7a2e82009d43b95205284e3efd7c))
+
 ## [1.0.37](https://github.com/Actunime/mongoose-models/compare/v1.0.36...v1.0.37) (2025-03-30)
 
 
